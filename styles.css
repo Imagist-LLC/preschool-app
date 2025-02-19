@@ -107,7 +107,7 @@ h2 {
 }
 
 /* ============================
-    Icon Layers (All Animate)
+    Icon Layers
 ============================ */
 
 .layer {
@@ -134,14 +134,13 @@ h2 {
     background-image: url('/images/front.png');
 }
 
-
 /* ============================
-    Hover Animation 
+    Hover Animation (All Layers)
 ============================ */
 
 /* Ensure no conflicting styles are applied */
 .icon-container:hover .layer {
-    animation: none !important;  /* Clear out any other animations */
+    animation: none !important;
 }
 
 /* Layer 1 */
