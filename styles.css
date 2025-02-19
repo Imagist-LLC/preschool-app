@@ -51,13 +51,6 @@ h2 {
     line-height: 1.2;
 }
 
-h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 15px;
-}
-
 /* ============================
     Tagline
 ============================ */
@@ -205,7 +198,7 @@ h3 {
 }
 
 /* ============================
-    Hover Animation (All Layers Fixed!)
+    Hover Animation (All Layers)
 ============================ */
 
 @keyframes bounce-effect-layer1 {
@@ -240,15 +233,28 @@ h3 {
 }
 
 /* ============================
-    Icon Label (Bolder Like iOS)
+    Icon Label
 ============================ */
 
 .icon-label {
     font-size: 1.2em;
-    font-weight: 600;  /* Bolder font weight */
+    font-weight: 600;  /* Bolder like iOS */
     color: #333;
     text-align: center;
     margin-top: 8px;
+}
+
+/* ============================
+    Icon Caption (More Subtle Footer)
+============================ */
+
+.caption {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.7;
 }
 
 /* ============================
@@ -295,5 +301,9 @@ h3 {
 
     .icon-label {
         color: #fff;
+    }
+
+    .caption {
+        color: #ccc;
     }
 }
