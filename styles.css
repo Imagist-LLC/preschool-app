@@ -108,7 +108,7 @@ body {
 
 /* Primary Heading (H1) */
 h1 {
-    font-size: 2.5rem;
+    font-size: 4.0rem;
     font-weight: bold;
     color: #000;  /* Black for light mode */
     margin-bottom: 20px;
@@ -117,7 +117,7 @@ h1 {
 
 /* Secondary Heading (H2, H3) */
 h2, h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #444;  /* Dark grey for light mode */
     margin-bottom: 15px;
