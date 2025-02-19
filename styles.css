@@ -247,6 +247,37 @@ h2 {
 }
 
 /* ============================
+    SVG Preorder Stamp at Bottom
+============================ */
+
+.bottom-preorder-stamp {
+    width: 100%;
+    text-align: center;  /* Center horizontally */
+    margin-top: 40px;    /* Space from previous elements */
+    padding: 20px 0;     /* Vertical padding */
+}
+
+.bottom-preorder-svg {
+    width: 80px;         /* Icon size */
+    height: auto;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.bottom-preorder-svg:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .bottom-preorder-svg {
+        width: 60px;
+    }
+}
+/* ============================
     Easter Egg Caption
 ============================ */
 
