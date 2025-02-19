@@ -1,4 +1,91 @@
 /* ============================
+    General Styling
+============================ */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ============================
+    Main Container
+============================ */
+
+.main {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 5vw;
+}
+
+/* ============================
+    Header Styling
+============================ */
+
+h1 {
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* ============================
+    Tagline
+============================ */
+
+.tagline {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 50px 0 30px;
+    color: #555;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ============================
+    Icon Styling
+============================ */
+
+.icon-link {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* ============================
     Icon Container
 ============================ */
 
@@ -8,7 +95,7 @@
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
@@ -18,9 +105,10 @@
 /* Main Icon */
 .icon-main {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    object-fit: contain;
+    margin: 10px auto;
+    max-width: 150px;
 }
 
 /* ============================
@@ -118,7 +206,6 @@
     50% { transform: scale(1.12); }
 }
 
-/* All three layers animate together */
 .icon-container:hover .layer:nth-of-type(1) {
     animation: bounce-effect-layer1 0.6s ease-out;
 }
@@ -136,11 +223,39 @@
 ============================ */
 
 .icon-label {
-    margin-top: 12px;
     font-size: 1.2em;
     font-weight: 300;
     color: #333;
     text-align: center;
+}
+
+/* ============================
+    Easter Egg Caption
+============================ */
+
+.easter-egg {
+    font-family: -apple-system-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.6rem;
+    color: #000000;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Use <i> tag for "little" */
+.easter-egg i {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.easter-egg:hover {
+    opacity: 0.7;
+    pointer-events: auto;
 }
 
 /* ============================
@@ -151,6 +266,10 @@
     body {
         color: #fff;
         background-color: #000;
+    }
+
+    h1, h2, h3, .tagline {
+        color: #fff;
     }
 
     .icon-label {
