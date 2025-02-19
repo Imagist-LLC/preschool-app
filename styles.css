@@ -108,15 +108,15 @@ h1 {
 
 /* Layer Backgrounds */
 #layer1 {
-    background-image: url('/images/preschool/back.png');
+    background-image: url('/images/back.png');
 }
 
 #layer2 {
-    background-image: url('/images/preschool/middle.png');
+    background-image: url('/images/middle.png');
 }
 
 #layer3 {
-    background-image: url('/images/preschool/front.png');
+    background-image: url('/images/front.png');
 }
 
 /* ============================
