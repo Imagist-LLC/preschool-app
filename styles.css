@@ -102,11 +102,40 @@ body {
 /* ============================
     Tagline
 ============================ */
+/* ============================
+    Header Styling
+============================ */
 
+/* Primary Heading (H1) */
 h1 {
     font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;  /* Black for light mode */
     margin-bottom: 20px;
-    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Secondary Heading (H2, H3) */
+h2, h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #444;  /* Dark grey for light mode */
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+/* ============================
+    Dark Mode Support
+============================ */
+
+@media (prefers-color-scheme: dark) {
+    h1 {
+        color: #fff;  /* White for dark mode */
+    }
+
+    h2, h3 {
+        color: #bbb;  /* Light grey for dark mode */
+    }
 }
 
 .tagline {
