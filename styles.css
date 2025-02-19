@@ -3,18 +3,20 @@
 ============================ */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
     margin: 0;
-    padding: 0;
+    padding: 0 5vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     color: #333;
     background-color: #f4f4f4;
-    transition: background-color 0.3s, color 0.3s;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ============================
@@ -24,34 +26,42 @@ body {
 .main {
     text-align: center;
     margin-bottom: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 5vw;
 }
 
-.container {
-    text-align: center;
-    max-width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+/* ============================
+    Header Styling
+============================ */
+
+h1 {
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 /* ============================
     Tagline
 ============================ */
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
 .tagline {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin: 50px 0 30px;
     color: #555;
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* ============================
@@ -66,11 +76,15 @@ h1 {
     text-align: center;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.icon-link:hover {
-    transform: scale(1.1);
+/* ✅ Hover scales only the icon-container, not the text */
+.icon-link:hover .icon-container {
+    transform: scale(1.1);   /* Only the box scales */
+}
+
+.icon-link:hover .icon-label {
+    transform: none;         /* Text does NOT scale */
 }
 
 /* Rounded rectangle icon */
@@ -80,19 +94,26 @@ h1 {
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
-}
-
-.icon-container.large {
-    width: 200px;
-    height: 200px;
+    cursor: pointer;
 }
 
 /* ============================
-    Icon Layers
+    Responsive Badge Adjustment
+============================ */
+
+@media (max-width: 768px) {
+    .icon-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* ============================
+    Icon Layers (Fixed Hover)
 ============================ */
 
 .layer {
@@ -119,33 +140,29 @@ h1 {
     background-image: url('/images/front.png');
 }
 
-/* ============================
-    Hover Animation (All Layers)
-============================ */
-
-/* Hover triggers for all three layers */
-.icon-container:hover .layer:nth-of-type(1) {
+/* ✅ All three layers animate correctly on hover */
+.icon-container:hover #layer1 {
     animation: bounce-effect-layer1 0.5s ease-out;
 }
 
-.icon-container:hover .layer:nth-of-type(2) {
+.icon-container:hover #layer2 {
     animation: bounce-effect-layer2 0.5s ease-out;
 }
 
-.icon-container:hover .layer:nth-of-type(3) {
+.icon-container:hover #layer3 {
     animation: bounce-effect-layer3 0.6s ease-out;
 }
 
 /* Touched state */
-.icon-container.touched .layer:nth-of-type(1) {
+.icon-container.touched #layer1 {
     animation: bounce-effect-layer1 0.5s ease-out;
 }
 
-.icon-container.touched .layer:nth-of-type(2) {
+.icon-container.touched #layer2 {
     animation: bounce-effect-layer2 0.5s ease-out;
 }
 
-.icon-container.touched .layer:nth-of-type(3) {
+.icon-container.touched #layer3 {
     animation: bounce-effect-layer3 0.6s ease-out;
 }
 
@@ -173,10 +190,11 @@ h1 {
 ============================ */
 
 .icon-label {
-    margin-top: 12px;
     font-size: 1.2em;
-    font-weight: 600; /* Bolder like iOS */
+    font-weight: 600;  /* Bold like iOS */
     color: #333;
+    text-align: center;
+    margin-top: 8px;
 }
 
 /* ============================
