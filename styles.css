@@ -102,41 +102,26 @@ h3 {
     cursor: pointer;
 }
 
-/* Main Icon */
-.icon-main {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
 /* ============================
-    Preorder Badge (Bottom-Right)
+    Preorder Stamp (SVG)
 ============================ */
 
-.preorder-badge {
+.preorder-stamp {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    background-color: #ff4081;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 12px;
+    width: 50px;
+    height: auto;
     transform: scale(0);
     opacity: 0;
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10;
     pointer-events: none;
+    z-index: 10;
 }
 
 /* Stamp Animation */
-.icon-container:hover .preorder-badge,
-.icon-container.stamped .preorder-badge {
+.icon-container:hover .preorder-stamp,
+.icon-container.stamped .preorder-stamp {
     transform: scale(1);
     opacity: 1;
 }
@@ -151,9 +136,8 @@ h3 {
         height: 120px;
     }
 
-    .preorder-badge {
-        font-size: 0.65rem;
-        padding: 4px 8px;
+    .preorder-stamp {
+        width: 40px;
         bottom: 6px;
         right: 6px;
     }
@@ -247,7 +231,6 @@ h3 {
     transition: opacity 0.3s ease;
 }
 
-/* Use <i> tag for "little" */
 .easter-egg i {
     font-style: italic;
     font-weight: 500;
