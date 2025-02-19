@@ -3,20 +3,18 @@
 ============================ */
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0 5vw;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     color: #333;
     background-color: #f4f4f4;
-    overflow-x: hidden;
-    overflow-y: auto;
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
 }
 
 /* ============================
@@ -26,42 +24,34 @@ body {
 .main {
     text-align: center;
     margin-bottom: 30px;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 5vw;
 }
 
-/* ============================
-    Header Styling
-============================ */
-
-h1 {
-    font-size: clamp(4rem, 8vw, 6.5rem);
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-
-h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 15px;
-    line-height: 1.2;
+.container {
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 /* ============================
     Tagline
 ============================ */
 
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .tagline {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin: 50px 0 30px;
+    margin-bottom: 30px;
     color: #555;
-    line-height: 1.4;
-    text-align: center;
 }
 
 /* ============================
@@ -76,34 +66,29 @@ h2 {
     text-align: center;
     position: relative;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* ============================
-    Icon Container
-============================ */
+.icon-link:hover {
+    transform: scale(1.1);
+}
 
+/* Rounded rectangle icon */
 .icon-container {
     width: 150px;
     height: 150px;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto 12px;
+    margin: 0 auto;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
-/* ============================
-    Responsive Badge Adjustment
-============================ */
-
-@media (max-width: 768px) {
-    .icon-container {
-        width: 120px;
-        height: 120px;
-    }
+.icon-container.large {
+    width: 200px;
+    height: 200px;
 }
 
 /* ============================
@@ -121,7 +106,7 @@ h2 {
     transition: transform 0.2s ease-out;
 }
 
-/* Background Layers */
+/* Layer Backgrounds */
 #layer1 {
     background-image: url('/images/back.png');
 }
@@ -135,59 +120,33 @@ h2 {
 }
 
 /* ============================
-    Hover Animation (All Layers)
+    Bounce Animation
 ============================ */
-
-/* Ensure no conflicting styles are applied */
-/* Allow all layers to animate correctly */
-.icon-container:hover .layer {
-    animation: unset;
-}
-
-/* Layer 1 */
-.icon-container:hover #layer1 {
-    animation: bounce-effect-layer1 0.6s ease-out forwards;
-}
-
-/* Layer 2 */
-.icon-container:hover #layer2 {
-    animation: bounce-effect-layer2 0.6s ease-out forwards;
-}
-
-/* Layer 3 */
-.icon-container:hover #layer3 {
-    animation: bounce-effect-layer3 0.6s ease-out forwards;
-}
-
-/* ============================
-    Keyframes for Each Layer
-============================ */
-
-@keyframes bounce-effect-layer1 {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
-}
 
 @keyframes bounce-effect-layer2 {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 @keyframes bounce-effect-layer3 {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.12);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.icon-container:hover .layer:nth-of-type(2) {
+    animation: bounce-effect-layer2 0.5s ease-out;
+}
+
+.icon-container:hover .layer:nth-of-type(3) {
+    animation: bounce-effect-layer3 0.6s ease-out;
+}
+
+.icon-container.touched .layer:nth-of-type(2) {
+    animation: bounce-effect-layer2 0.5s ease-out;
+}
+
+.icon-container.touched .layer:nth-of-type(3) {
+    animation: bounce-effect-layer3 0.6s ease-out;
 }
 
 /* ============================
@@ -195,114 +154,28 @@ h2 {
 ============================ */
 
 .icon-label {
+    margin-top: 12px;
     font-size: 1.2em;
-    font-weight: 600;  /* Bolder like iOS */
+    font-weight: 600;
     color: #333;
-    text-align: center;
-    margin-top: 8px;
 }
 
 /* ============================
-    Icon Caption (More Subtle Footer)
+    Footer
 ============================ */
 
-.caption {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
-    text-align: center;
-    margin-top: 20px;
-    opacity: 0.7;
-}
-
-/* ============================
-    Site-Wide SVG Preorder Stamp (Bottom-Right)
-============================ */
-
-.site-preorder-stamp {
-    position: fixed;  /* Fixed to the viewport */
-    bottom: 20px;
-    right: 20px;
-    width: 80px;
-    height: auto;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 9999;
-}
-
-/* Hover Effect */
-.site-preorder-stamp:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-/* Responsive Adjustment */
-@media (max-width: 768px) {
-    .site-preorder-stamp {
-        width: 60px;
-        bottom: 15px;
-        right: 15px;
-    }
-}
-
-/* ============================
-    SVG Preorder Stamp at Bottom
-============================ */
-
-.bottom-preorder-stamp {
+.footer {
     width: 100%;
-    text-align: center;  /* Center horizontally */
-    margin-top: 40px;    /* Space from previous elements */
-    padding: 20px 0;     /* Vertical padding */
-}
-
-.bottom-preorder-svg {
-    width: 80px;         /* Icon size */
-    height: auto;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hover Effect */
-.bottom-preorder-svg:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-/* Responsive Adjustment */
-@media (max-width: 768px) {
-    .bottom-preorder-svg {
-        width: 60px;
-    }
-}
-/* ============================
-    Easter Egg Caption
-============================ */
-
-.easter-egg {
-    font-family: -apple-system-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 0.6rem;
-    color: #000000;
-    text-align: center;
     position: absolute;
-    bottom: 5px;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    transition: opacity 0.3s ease;
+    bottom: 0;
+    text-align: center;
+    padding: 20px;
+    color: #777;
 }
 
-.easter-egg i {
-    font-style: italic;
-    font-weight: 500;
-}
-
-.easter-egg:hover {
-    opacity: 0.7;
-    pointer-events: auto;
+.footer img {
+    max-height: 60px;
+    max-width: 100%;
 }
 
 /* ============================
@@ -311,19 +184,16 @@ h2 {
 
 @media (prefers-color-scheme: dark) {
     body {
-        color: #fff;
-        background-color: #000;
+        color: #f4f4f4;
+        background-color: #333;
     }
-
-    h1, h2, h3, .tagline {
-        color: #fff;
+    .icon-link {
+        color: white;
     }
-
+    h1, .tagline {
+        color: #f4f4f4;
+    }
     .icon-label {
-        color: #fff;
-    }
-
-    .caption {
-        color: #ccc;
+        color: #f4f4f4;
     }
 }
