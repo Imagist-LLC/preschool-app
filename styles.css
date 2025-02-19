@@ -8,14 +8,13 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Changed to flex-start to allow content to align to the top */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Changed to min-height to allow expansion */
+    height: 100vh;
     color: #333;
     background-color: #f4f4f4;
     transition: background-color 0.3s, color 0.3s;
-    overflow-x: hidden; /* Hide horizontal scroll */
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow: hidden;
 }
 
 /* ============================
@@ -23,19 +22,37 @@ body {
 ============================ */
 
 .main {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the children horizontally */
     text-align: center;
-    padding-bottom: 30px; /* Adjusted padding for bottom spacing */
-    width: 100%; /* Ensure full width */
+    margin-bottom: 30px;
+
+}
+
+.preorder-link {
+    margin-top: 50px; /* Increase margin-top to push it down like a footnote */
+    text-align: center; /* Center the link text */
+    width: 100%; /* Full width to help with centering */
+    display: flex;
+    justify-content: center; /* This will center the link */
+}
+
+.preorder-graphic {
+    max-width: 100px; /* Limiting the width of the image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .container {
     text-align: center;
     max-width: 90%;
-    margin: 20px auto; /* Adjusted for top and bottom margin */
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 /* ============================
@@ -51,40 +68,19 @@ h1 {
 .tagline {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 20px; /* Adjusted for consistency */
+    margin-bottom: 30px;
     color: #555;
 }
 
 /* ============================
     Icon Styling
 ============================ */
-.layer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    border-radius: 24px; /* Ensures border radius is applied to each layer */
-}
-
-#layer1 {
-    background-image: url('/images/back.svg'); /* Confirm correct path */
-}
-
-#layer2 {
-    background-image: url('/images/middle.svg'); /* Confirm correct path */
-}
-
-#layer3 {
-    background-image: url('/images/front.svg'); /* Confirm correct path */
-}
 
 .icon-link {
     color: black;
     text-decoration: none;
     display: inline-block;
-    margin: 20px auto; /* Centered horizontally */
+    margin: 20px 30px;
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -97,22 +93,89 @@ h1 {
 
 /* Rounded rectangle icon */
 .icon-container {
-    width: 200px;  /* Adjust as necessary */
-    height: 200px; /* Adjust as necessary */
+    width: 150px;
+    height: 150px;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* Remove or comment out the background gradient that may be obscuring the images */
-    /* background: linear-gradient(135deg, #ff8c00, #ff4081); */
+    background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
 }
-
 
 .icon-container.large {
     width: 200px;
     height: 200px;
+}
+
+/* ============================
+    Icon Layers
+============================ */
+
+.layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    border-radius: 24px;
+    transition: transform 0.2s ease-out;
+}
+
+/* Layer Backgrounds */
+#layer1 {
+    background-image: url('/images/back.png');
+}
+
+#layer2 {
+    background-image: url('/images/middle.png');
+}
+
+#layer3 {
+    background-image: url('/images/front.png');
+}
+
+/* ============================
+    Bounce Animation
+============================ */
+
+@keyframes bounce-effect-layer2 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce-effect-layer3 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.icon-container:hover .layer:nth-of-type(2) {
+    animation: bounce-effect-layer2 0.5s ease-out;
+}
+
+.icon-container:hover .layer:nth-of-type(3) {
+    animation: bounce-effect-layer3 0.6s ease-out;
+}
+
+.icon-container.touched .layer:nth-of-type(2) {
+    animation: bounce-effect-layer2 0.5s ease-out;
+}
+
+.icon-container.touched .layer:nth-of-type(3) {
+    animation: bounce-effect-layer3 0.6s ease-out;
+}
+
+/* ============================
+    Icon Label
+============================ */
+
+.icon-label {
+    margin-top: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
 }
 
 /* ============================
@@ -121,11 +184,11 @@ h1 {
 
 .footer {
     width: 100%;
-    position: relative; /* Changed from absolute to relative */
+    position: absolute;
     bottom: 0;
     text-align: center;
-    padding: 20px 0; /* Padding for top and bottom */
-    background-color: #f4f4f4; /* Optional: might specify a background color */
+    padding: 20px;
+    color: #777;
 }
 
 .footer img {
@@ -142,7 +205,13 @@ h1 {
         color: #f4f4f4;
         background-color: #333;
     }
-    .icon-link, h1, .tagline, .icon-label {
+    .icon-link {
+        color: white;
+    }
+    h1, .tagline {
+        color: #f4f4f4;
+    }
+    .icon-label {
         color: #f4f4f4;
     }
 }
