@@ -58,6 +58,27 @@ h1 {
 /* ============================
     Icon Styling
 ============================ */
+.layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    border-radius: 24px; /* Ensures border radius is applied to each layer */
+}
+
+#layer1 {
+    background-image: url('/images/back.svg'); /* Confirm correct path */
+}
+
+#layer2 {
+    background-image: url('/images/middle.svg'); /* Confirm correct path */
+}
+
+#layer3 {
+    background-image: url('/images/front.svg'); /* Confirm correct path */
+}
 
 .icon-link {
     color: black;
@@ -76,16 +97,18 @@ h1 {
 
 /* Rounded rectangle icon */
 .icon-container {
-    width: 150px;
-    height: 150px;
+    width: 200px;  /* Adjust as necessary */
+    height: 200px; /* Adjust as necessary */
     border-radius: 24px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto; /* Ensure central alignment */
+    margin: 0 auto; /* Center horizontally */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ff8c00, #ff4081);
+    /* Remove or comment out the background gradient that may be obscuring the images */
+    /* background: linear-gradient(135deg, #ff8c00, #ff4081); */
     transition: all 0.3s ease;
 }
+
 
 .icon-container.large {
     width: 200px;
