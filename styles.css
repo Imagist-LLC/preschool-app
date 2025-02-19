@@ -56,6 +56,50 @@ body {
 }
 
 /* ============================
+    SVG Badge Styling
+============================ */
+.badge-container {
+    position: fixed;  /* Fixed to stay in place even when scrolling */
+    bottom: 20px;     /* Distance from bottom */
+    right: 20px;      /* Distance from right */
+    z-index: 100;     /* Ensure it's on top of other content */
+    width: 80px;      /* Larger size */
+    height: 80px;
+    border-radius: 50%; /* Rounded like a badge */
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff8c00, #ff4081); /* Gradient background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Slightly transparent until hovered */
+}
+
+.badge-container:hover {
+    transform: scale(1.2); /* Slight bounce effect on hover */
+    opacity: 1;
+}
+
+/* SVG Icon */
+.badge-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the SVG scales correctly */
+    display: block;
+}
+
+/* ============================
+    Responsive Adjustment
+============================ */
+@media (max-width: 768px) {
+    .badge-container {
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* ============================
     Tagline
 ============================ */
 
