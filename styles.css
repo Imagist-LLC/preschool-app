@@ -63,12 +63,12 @@ body {
     bottom: 20px;     /* Distance from bottom */
     right: 20px;      /* Distance from right */
     z-index: 100;     /* Ensure it's on top of other content */
-    width: 80px;      /* Larger size */
-    height: 80px;
-    border-radius: 50%; /* Rounded like a badge */
-    overflow: hidden;
-    background: linear-gradient(135deg, #ff8c00, #ff4081); /* Gradient background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 200px;      /* Larger size */
+    height: 100px;
+
+
+
+
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.8; /* Slightly transparent until hovered */
