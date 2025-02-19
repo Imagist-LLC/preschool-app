@@ -134,35 +134,60 @@ h2 {
     background-image: url('/images/front.png');
 }
 
+
 /* ============================
-    Hover Animation (All Layers)
+    Hover Animation 
+============================ */
+
+/* Ensure no conflicting styles are applied */
+.icon-container:hover .layer {
+    animation: none !important;  /* Clear out any other animations */
+}
+
+/* Layer 1 */
+.icon-container:hover #layer1 {
+    animation: bounce-effect-layer1 0.6s ease-out forwards;
+}
+
+/* Layer 2 */
+.icon-container:hover #layer2 {
+    animation: bounce-effect-layer2 0.6s ease-out forwards;
+}
+
+/* Layer 3 */
+.icon-container:hover #layer3 {
+    animation: bounce-effect-layer3 0.6s ease-out forwards;
+}
+
+/* ============================
+    Keyframes for Each Layer
 ============================ */
 
 @keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
 }
 
 @keyframes bounce-effect-layer2 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 @keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-}
-
-.icon-container:hover #layer1 {
-    animation: bounce-effect-layer1 0.6s ease-out;
-}
-
-.icon-container:hover #layer2 {
-    animation: bounce-effect-layer2 0.6s ease-out;
-}
-
-.icon-container:hover #layer3 {
-    animation: bounce-effect-layer3 0.6s ease-out;
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
 }
 
 /* ============================
