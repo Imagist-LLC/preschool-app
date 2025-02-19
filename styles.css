@@ -139,8 +139,9 @@ h2 {
 ============================ */
 
 /* Ensure no conflicting styles are applied */
+/* Allow all layers to animate correctly */
 .icon-container:hover .layer {
-    animation: none !important;
+    animation: unset;
 }
 
 /* Layer 1 */
