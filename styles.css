@@ -96,58 +96,6 @@ h2 {
 }
 
 /* ============================
-    Custom Preorder Badge (Text)
-============================ */
-
-.preorder-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #ff4081;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    padding: 6px 10px;
-    border-radius: 12px;
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    z-index: 10;
-}
-
-/* Stamp Animation */
-.icon-container:hover .preorder-badge,
-.icon-container.stamped .preorder-badge {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* ============================
-    SVG Preorder Badge (Bottom-Right)
-============================ */
-
-.preorder-stamp {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    width: 50px;
-    height: auto;
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    pointer-events: none;
-    z-index: 10;
-}
-
-/* SVG Stamp Animation */
-.icon-container:hover .preorder-stamp,
-.icon-container.stamped .preorder-stamp {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* ============================
     Responsive Badge Adjustment
 ============================ */
 
@@ -155,17 +103,6 @@ h2 {
     .icon-container {
         width: 120px;
         height: 120px;
-    }
-
-    .preorder-badge {
-        font-size: 0.7rem;
-        padding: 5px 8px;
-    }
-
-    .preorder-stamp {
-        width: 40px;
-        bottom: 8px;
-        right: 8px;
     }
 }
 
@@ -216,10 +153,6 @@ h2 {
     50% { transform: scale(1.12); }
 }
 
-.icon-container:hover .layer {
-    animation: none;
-}
-
 .icon-container:hover #layer1 {
     animation: bounce-effect-layer1 0.6s ease-out;
 }
@@ -255,6 +188,37 @@ h2 {
     text-align: center;
     margin-top: 20px;
     opacity: 0.7;
+}
+
+/* ============================
+    Site-Wide SVG Preorder Stamp (Bottom-Right)
+============================ */
+
+.site-preorder-stamp {
+    position: fixed;  /* Fixed to the viewport */
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
+}
+
+/* Hover Effect */
+.site-preorder-stamp:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .site-preorder-stamp {
+        width: 60px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
 
 /* ============================
