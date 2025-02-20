@@ -155,6 +155,7 @@ body {
     font-size: 3rem;
     margin-bottom: 15px;
     color: white;
+    line-height: 1.1; 
 }
 
 .feature-text p {
