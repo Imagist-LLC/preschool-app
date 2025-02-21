@@ -338,15 +338,31 @@ video.inline-video {
     font-weight: bold;
     color: #000;
     background-color: #fff;
+    border: 2px solid #000; /* Added black border */
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .cta .button:hover {
     background-color: #bbb;
+    border-color: #555; /* Darker border on hover */
 }
 
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .cta .button {
+        color: #fff;
+        background-color: #000;
+        border: 2px solid #fff; /* White border in dark mode */
+    }
+    
+    .cta .button:hover {
+        background-color: #444;
+        border-color: #ddd; /* Lighter border on hover */
+    }
+}
 .cta .footer-caption {
     font-size: 1rem;
     color: #bbb;
