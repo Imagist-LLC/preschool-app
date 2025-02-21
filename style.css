@@ -37,6 +37,13 @@ body {
     margin-bottom: 50px;
 }
 
+.icon {
+    width: 88px;
+    height: 88px;
+    fill: currentColor;
+    color: #007aff; /* Apple Blue */
+}
+
 /* Main Icon with Label */
 .icon-link {
     color: white;
