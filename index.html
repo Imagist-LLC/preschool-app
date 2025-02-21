@@ -103,6 +103,14 @@
             <!-- Fallback image if video is not supported -->
             <img src="images/letters.jpg" alt="Alphabet learning feature">
         </video>
+        <style>
+.inline-video {
+    max-width: 100%;    /* Make sure it doesn't exceed its container */
+    height: auto;       /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    display: block;     /* Remove extra spacing under video */
+}
+</style>
     </figure>
 </section>
 
