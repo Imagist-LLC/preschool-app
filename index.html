@@ -139,24 +139,22 @@
                 <p>From adjustable text and buttons to support for <strong>dark mode</strong> for reducing eye strain (and saving battery), Preschool.app adjusts to every hand, big or small. It works on iPhone, iPad (even with a keyboard and trackpad), and (coming soon) Apple Watch and Apple TV!</p>
             </div>
 
-             <figure class="feature-image">
-    <picture>
-        <!-- Light Mode Poster -->
-        <source srcset="images/adaptation-light.png" media="(prefers-color-scheme: light)">
-        <!-- Dark Mode Poster (Default) -->
-        <img src="images/adaptation.png" alt="Accessibility options with larger text and dark mode">
-    </picture>
-
+        <figure class="feature-image">
     <video class="inline-video"
         playsinline 
         autoplay 
         muted 
         loop 
+        poster="images/adaptation.png"
     >
         <!-- Light Mode Video -->
         <source src="images/adaptation-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+
         <!-- Dark Mode Video (Default) -->
         <source src="images/adaptation.m4v" type="video/mp4">
+
+        <!-- Fallback Image If Video Doesn't Play -->
+        <img src="images/adaptation.png" alt="Accessibility options with larger text and dark mode">
     </video>
 </figure>
 
