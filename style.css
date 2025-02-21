@@ -9,11 +9,14 @@ body {
     padding: 0;
     color: #fff;
     background-color: #000;
-    overflow-x: hidden;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+        transition: none; 
+
 }
 
+html, body {
+    overflow-x: clip; /* More modern, no layout shift */
+}
 /* ============================
     Hero Section
 ============================ */
