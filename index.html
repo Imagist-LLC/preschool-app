@@ -56,22 +56,23 @@
                 <h2>Colors that pop. And slide.</h2>
                 <p>Explore the rainbow with <strong>vibrant visuals</strong> and playful animations. Every little tap and swipe invites discovery, with interactions designed to capture young imaginations while remaining simple and frustration-free.</p>
             </div>
-         <figure class="feature-image">
+     <figure class="feature-image">
+    <picture>
+        <source srcset="images/shapes-light.jpeg" media="(prefers-color-scheme: light)">
+        <img src="images/shapes.jpeg" alt="Shape learning module">
+    </picture>
+
     <video class="inline-video"
         playsinline 
         autoplay 
         muted 
-        loop 
-        poster="images/shapes.jpeg"
+        loop
     >
         <!-- Light Mode Video -->
         <source src="images/colors-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
 
         <!-- Dark Mode Video (Default) -->
         <source src="images/colors.m4v" type="video/mp4">
-
-        <!-- Fallback Image If Video Doesn't Play -->
-        <img src="images/shapes-light.jpeg" alt="Shape learning module">
     </video>
 </figure>
         </section>
