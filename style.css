@@ -578,10 +578,29 @@ strong {
         box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08); /* Softer shadow in dark mode */
     }
 }
-
+/* Feature Image Container */
 .feature-image {
-    position: relative;
+    position: relative;   /* Essential for absolute positioning */
     width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+    border-radius: clamp(8px, 2vw, 24px);
+    display: block;       /* Ensures no stacking from flexbox */
+    flex-shrink: 0;       /* Prevent flexbox from compressing */
+}
+
+/* Poster Image (Picture) */
+.video-poster {
+    position: absolute;   /* Overlay the video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    z-index: 2;           /* Above video until video plays */
+    pointer-events: none; /* Allows interaction with video below */
+    display: block;
     overflow: hidden;
 }
 
@@ -590,30 +609,13 @@ strong {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
+    border-radius: inherit;
     display: block;
     position: relative;
-    z-index: 2;
+    z-index: 1;           /* Behind poster until it plays */
 }
 
-/* Poster Frame */
-.video-poster {
-    width: 100%;
-    height: auto;
-    border-radius: clamp(8px, 2vw, 24px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: block;
-    pointer-events: none;
-}
-
-/* Hide Poster When Video Starts */
-.inline-video[autoplay] {
-    visibility: visible;
-}
-
-.inline-video[autoplay]:playing + .video-poster {
-    display: none;
+/* Only Hide Poster When Video Plays */
+.inline-video:playing + .video-poster {
+    display: none;        /* Poster disappears when video starts */
 }
