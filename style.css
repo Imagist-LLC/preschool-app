@@ -86,6 +86,10 @@ video {
     display: block;
 }
 
+video.inline-video {
+    border-radius: clamp(8px, 2vw, 24px) !important;
+    overflow: hidden !important;
+}
 /* ============================
     Icon Layers
 ============================ */
