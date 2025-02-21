@@ -78,7 +78,22 @@
                 <p>Tap a letter, hear its sound, and see it in use. <strong>No annoying sound effects</strong>—just clear, confident pronunciation that makes learning to read easy.</p>
             </div>
             <figure class="feature-image">
-                <source srcset="images/letters-pad.heic" type="image/heic" media="(min-width: 1024px)">
+ <video 
+            playsinline 
+            autoplay 
+            muted 
+            loop 
+            poster="images/letters.jpg"
+        >
+            <source 
+                src="images/letters.mov" 
+                type="video/mp4"
+                media="(min-width: 1024px)"
+            >
+            <!-- Fallback image if video fails -->
+            <img src="images/letters.jpg" alt="Alphabet learning feature">
+        </video>
+        
         <source srcset="images/letters.heic" type="image/heic">
               <img src="images/letters.jpg" alt="Alphabet learning feature"> 
             </figure>
