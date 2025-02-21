@@ -44,6 +44,21 @@ body {
     color: #007aff; /* Apple Blue */
 }
 
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    .icon {
+        color: black;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .icon {
+        color: white;
+    }
+}
+
 /* Main Icon with Label */
 .icon-link {
     color: white;
