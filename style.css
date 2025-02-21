@@ -72,6 +72,14 @@ body {
     transform: scale(1.1);
 }
 
+
+.inline-video {
+    max-width: 100%;    /* Make sure it doesn't exceed its container */
+    height: auto;       /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    display: block;     /* Remove extra spacing under video */
+}
+
 /* ============================
     Icon Layers
 ============================ */
