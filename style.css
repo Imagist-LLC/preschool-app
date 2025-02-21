@@ -13,7 +13,15 @@ body {
         transition: none; 
 
 }
+body {
+    max-width: none;  /* Remove any overall width limits */
+    width: 100%;      /* Use full width */
+}
 
+.feature-text {
+    width: 55%;  /* Increase text width from 45% to 55% */
+    max-width: 900px; /* Allow more room for text */
+}
 html, body {
     overflow-x: clip; /* More modern, no layout shift */
 }
@@ -326,6 +334,29 @@ video.inline-video {
         width: 100%;
     }
 }
+
+.feature-text h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem); /* Slightly bigger headings */
+    max-width: 100%;  /* Allow headings to use full width */
+    margin-left: 0;   /* Reduce excessive margins */
+    margin-right: 0;
+    line-height: 1.2; /* Keep line-height tight */
+}
+
+
+@media (max-width: 1024px) {
+    .feature-text {
+        width: 70%;  /* Allow more width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-text {
+        width: 85%;  /* Allow even more width for mobile */
+    }
+}
+
+
 /* ============================
     Call to Action
 ============================ */
