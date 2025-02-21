@@ -72,33 +72,41 @@
             </figure>
         </section>
 
-        <section class="feature reverse">
-            <div class="feature-text">
-                <h2>This app speaks to you. Not at you.</h2>
-                <p>Tap a letter, hear its sound, and see it in use. <strong>No annoying sound effects</strong>—just clear, confident pronunciation that makes learning to read easy.</p>
-            </div>
-            <figure class="feature-image">
- <video 
+       <section class="feature reverse">
+    <div class="feature-text">
+        <h2>This app speaks to you. Not at you.</h2>
+        <p>Tap a letter, hear its sound, and see it in use. <strong>No annoying sound effects</strong>—just clear, confident pronunciation that makes learning to read easy.</p>
+    </div>
+
+    <figure class="feature-image">
+        <video 
             playsinline 
             autoplay 
             muted 
             loop 
             poster="images/letters.jpg"
         >
+            <!-- High-resolution video for desktops (min-width: 1024px) -->
             <source 
                 src="images/letters-pad.mov" 
-                type="video/mp4"
+                type="video/mp4" 
                 media="(min-width: 1024px)"
             >
-            <!-- Fallback image if video fails -->
+
+
+            <!-- Default video for smaller screens (phones) -->
+            <source 
+                src="images/letters.mov" 
+                type="video/mp4"
+            >
+
+            <!-- Fallback image if video is not supported -->
             <img src="images/letters.jpg" alt="Alphabet learning feature">
         </video>
-        
-        <source srcset="images/letters.heic" type="image/heic">
-              <img src="images/letters.jpg" alt="Alphabet learning feature"> 
-            </figure>
-        </section>
+    </figure>
+</section>
 
+        
         <section class="feature">
             <div class="feature-text">
                 <h2>Designed to adapt.</h2>
