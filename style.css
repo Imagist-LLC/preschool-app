@@ -278,6 +278,30 @@ body {
 /* ============================
     Dark Mode
 ============================ */
+/* Default Light Mode */
+body {
+    color: #555; /* Grey text for body */
+    background-color: #fff;
+}
+
+strong {
+    color: #000; /* Pure black for <strong> */
+    font-weight: 600; /* Slightly lighter than bold for Apple's look */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #bbb; /* Grey text for body */
+        background-color: #000;
+    }
+
+    strong {
+        color: #fff; /* Pure white for <strong> */
+        font-weight: 600;
+    }
+}
+
 @media (prefers-color-scheme: light) {
     body {
         background-color: #fff;
