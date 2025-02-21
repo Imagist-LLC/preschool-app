@@ -84,15 +84,9 @@
             autoplay 
             muted 
             loop 
-            poster="images/letters.jpg"
+            poster="images/letters.png"
         >
-            <!-- High-resolution video for desktops (min-width: 1024px) -->
-            <source 
-                src="images/letters-pad.m4v" 
-                type="video/mp4" 
-                media="(min-width: 1024px)"
-            >
-
+           
 
             <!-- Default video for smaller screens (phones) -->
             <source 
@@ -101,15 +95,10 @@
             >
 
             <!-- Fallback image if video is not supported -->
-            <img src="images/letters.jpg" alt="Alphabet learning feature">
+            <img src="images/letters.png" alt="Alphabet learning feature">
         </video>
         <style>
-.inline-video {
-    max-width: 100%;    /* Make sure it doesn't exceed its container */
-    height: auto;       /* Maintain aspect ratio */
-    object-fit: contain; /* Prevent distortion */
-    display: block;     /* Remove extra spacing under video */
-}
+
 </style>
     </figure>
 </section>
