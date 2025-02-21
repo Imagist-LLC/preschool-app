@@ -145,13 +145,13 @@ body {
 /* Reduce side padding on smaller screens */
 @media (max-width: 768px) {
     .feature, .hero, .cta {
-        padding: 80px 4vw;  /* Slightly less padding */
+        padding: 40px 4vw;  /* Slightly less padding */
     }
 }
 
 @media (max-width: 480px) {
     .feature, .hero, .cta {
-        padding: 60px 3.5vw;  /* Even less padding for very small screens */
+        padding: 30px 3.5vw;  /* Even less padding for very small screens */
     }
 }
 
