@@ -128,12 +128,31 @@ body {
 /* ============================
     Features Section
 ============================ */
+
+/* Default padding for larger screens */
+.feature, .hero, .cta {
+    padding: 100px 5vw;
+}
+
+/* Reduce side padding on smaller screens */
+@media (max-width: 768px) {
+    .feature, .hero, .cta {
+        padding: 80px 4vw;  /* Slightly less padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature, .hero, .cta {
+        padding: 60px 3.5vw;  /* Even less padding for very small screens */
+    }
+}
+
+
 .feature {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5vw;
-    padding: 100px 5vw;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -178,7 +197,7 @@ body {
 ============================ */
 .cta {
     text-align: center;
-    padding: 100px 5vw;
+
 }
 
 .cta .button {
@@ -214,7 +233,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline; /* Underline only on hover */
+    text-decoration: none; 
 }
 
 a:visited {
