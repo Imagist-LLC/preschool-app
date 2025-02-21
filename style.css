@@ -275,20 +275,6 @@ body {
     }
 }
 
-/* ============================
-    Dark Mode
-============================ */
-/* Default Light Mode */
-body {
-    color: #555; /* Grey text for body */
-    background-color: #fff;
-}
-
-strong {
-    color: #000; /* Pure black for <strong> */
-    font-weight: 600; /* Slightly lighter than bold for Apple's look */
-}
-
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     body {
@@ -298,15 +284,24 @@ strong {
 
     strong {
         color: #fff; /* Pure white for <strong> */
-        font-weight: 600;
+        font-weight: 500; /* Slightly thicker but not full bold */
+        letter-spacing: -0.02em; /* Consistency with light mode */
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: #fff;
-        color: #000;
-    }
+   /* Default Light Mode */
+body {
+    color: #555; /* Grey text for body */
+    background-color: #fff;
+}
+
+strong {
+    color: #000; /* Pure black for <strong> */
+    font-weight: 500; /* Slight weight increase without full bold */
+    letter-spacing: -0.02em; /* Subtle tightening of letters for Apple's look */
+}
+
 
     .icon-label {
         color: #000;
