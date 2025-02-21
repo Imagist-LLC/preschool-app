@@ -80,6 +80,12 @@ body {
     display: block;     /* Remove extra spacing under video */
 }
 
+video {
+    border-radius: clamp(8px, 2vw, 24px); /* Dynamic rounding */
+    overflow: hidden;
+    display: block;
+}
+
 /* ============================
     Icon Layers
 ============================ */
