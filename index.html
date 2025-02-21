@@ -53,24 +53,26 @@
                 <h2>Colors that pop. And slide.</h2>
                 <p>Explore the rainbow with <strong>vibrant visuals</strong> and playful animations. Every little tap and swipe invites discovery, with interactions designed to capture young imaginations while remaining simple and frustration-free.</p>
             </div>
-            <figure class="feature-image">
-                 <video class="inline-video"
-            playsinline 
-            autoplay 
-            muted 
-            loop 
-            poster="images/colors.png"
-        >
-           
+           <figure class="feature-image">
+    <picture>
+        <!-- Light Mode Poster -->
+        <source srcset="images/colors-light.png" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Poster (Default) -->
+        <img src="images/colors.png" alt="Colorful rainbow feature">
+    </picture>
 
-            <!-- Default video for smaller screens (phones) -->
-            <source 
-                src="images/colors.m4v" 
-                type="video/mp4"
-            >
-
-                <img src="images/colors.png" alt="Colorful rainbow feature">
-            </figure>
+    <video class="inline-video"
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+    >
+        <!-- Light Mode Video -->
+        <source src="images/colors-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Video (Default) -->
+        <source src="images/colors.m4v" type="video/mp4">
+    </video>
+</figure>
         </section>
 
         <section class="feature">
@@ -78,29 +80,26 @@
                 <h2>Objects. Permanence.</h2>
                 <p>From circles and squares to stars and hearts, children can explore objects and shapes, see real-world examples, and (coming soon) match them in an interactive game. Preschool.app makes learning fun. Naturally.</p>
             </div>
-            <figure class="feature-image">
-        <video class="inline-video"
-            playsinline 
-            autoplay 
-            muted 
-            loop 
-            poster="images/shapes.png"
-        >
-           
+           <figure class="feature-image">
+    <picture>
+        <!-- Light Mode Poster -->
+        <source srcset="images/shapes-light.png" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Poster (Default) -->
+        <img src="images/shapes.png" alt="Shape learning module">
+    </picture>
 
-            <!-- Default video for smaller screens (phones) -->
-            <source 
-                src="images/shapes.m4v" 
-                type="video/mp4"
-            >
-
-            <!-- Fallback image if video is not supported -->
-            <img src="images/shapes.png" alt="Shape learning module">
-        </video>
-        <style>
-
-</style>
-    </figure>
+    <video class="inline-video"
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+    >
+        <!-- Light Mode Video -->
+        <source src="images/shapes-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Video (Default) -->
+        <source src="images/shapes.m4v" type="video/mp4">
+    </video>
+</figure>
             
        
         </section>
@@ -111,29 +110,26 @@
         <p>Tap a letter, hear its sound, and see it in use. <strong>No annoying sound effects</strong>—just clear, confident pronunciation that makes learning to read easy.</p>
     </div>
 
-    <figure class="feature-image">
-        <video class="inline-video"
-            playsinline 
-            autoplay 
-            muted 
-            loop 
-            poster="images/letters.png"
-        >
-           
+   <figure class="feature-image">
+    <picture>
+        <!-- Light Mode Poster -->
+        <source srcset="images/letters-light.png" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Poster (Default) -->
+        <img src="images/letters.png" alt="Alphabet learning feature">
+    </picture>
 
-            <!-- Default video for smaller screens (phones) -->
-            <source 
-                src="images/letters.m4v" 
-                type="video/mp4"
-            >
-
-            <!-- Fallback image if video is not supported -->
-            <img src="images/letters.png" alt="Alphabet learning feature">
-        </video>
-        <style>
-
-</style>
-    </figure>
+    <video class="inline-video"
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+    >
+        <!-- Light Mode Video -->
+        <source src="images/letters-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Video (Default) -->
+        <source src="images/letters.m4v" type="video/mp4">
+    </video>
+</figure>
 </section>
 
         
@@ -143,34 +139,26 @@
                 <p>From adjustable text and buttons to support for <strong>dark mode</strong> for reducing eye strain (and saving battery), Preschool.app adjusts to every hand, big or small. It works on iPhone, iPad (even with a keyboard and trackpad), and (coming soon) Apple Watch and Apple TV!</p>
             </div>
 
-              <figure class="feature-image">
-        <video class="inline-video"
-            playsinline 
-            autoplay 
-            muted 
-            loop 
-            poster="images/adaptation.png"
-        >
-         
+             <figure class="feature-image">
+    <picture>
+        <!-- Light Mode Poster -->
+        <source srcset="images/adaptation-light.png" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Poster (Default) -->
+        <img src="images/adaptation.png" alt="Accessibility options with larger text and dark mode">
+    </picture>
 
-            <!-- Default video for smaller screens (phones) -->
-            <source 
-                src="images/adaptation.m4v" 
-                type="video/mp4"
-            >
-
-            <!-- Fallback image if video is not supported -->
-              <img src="images/adaptation.png" alt="Accessibility options with larger text and dark mode">
-        </video>
-        <style>
-.inline-video {
-    max-width: 100%;    /* Make sure it doesn't exceed its container */
-    height: auto;       /* Maintain aspect ratio */
-    object-fit: contain; /* Prevent distortion */
-    display: block;     /* Remove extra spacing under video */
-}
-</style>
-    </figure>
+    <video class="inline-video"
+        playsinline 
+        autoplay 
+        muted 
+        loop 
+    >
+        <!-- Light Mode Video -->
+        <source src="images/adaptation-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+        <!-- Dark Mode Video (Default) -->
+        <source src="images/adaptation.m4v" type="video/mp4">
+    </video>
+</figure>
 
 
         
