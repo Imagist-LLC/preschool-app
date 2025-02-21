@@ -203,6 +203,28 @@ body {
     margin-top: 20px;
     opacity: 0.8;
 }
+/* ============================
+    Link Styling 
+============================ */
+
+a {
+    color: #007aff; 
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline only on hover */
+}
+
+a:visited {
+    color: #007aff; /* Same for visited links */
+}
+
+a:focus {
+    outline: none; /* No default outline */
+    border-bottom: 2px solid #007aff; /* Subtle focus indication */
+}
 
 /* ============================
     Easter Egg
