@@ -78,7 +78,7 @@ body {
     overflow: hidden;
     position: relative;
     margin: 0 auto;
-    background: linear-gradient(135deg, #ff8c00, #ff4081);
+   background: linear-gradient(135deg, #ff8c00, #ff4081); /* Mostly red gradient */
     transition: all 0.3s ease;
 }
 
