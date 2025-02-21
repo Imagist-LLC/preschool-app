@@ -511,3 +511,37 @@ strong {
         color: #000;
     }
 }
+/* Unified Rounded Corners */
+.inline-video, video, .feature-image img {
+    border-radius: clamp(8px, 2vw, 24px);  /* Consistent corner radius */
+    overflow: hidden;                      /* Ensures content respects border radius */
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Matching Shadows */
+.inline-video, video, .feature-image img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Consistent shadow */
+    transition: all 0.3s ease;  /* Smooth hover effect */
+}
+
+/* Optional Hover Effect */
+.inline-video:hover, video:hover, .feature-image img:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow */
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    .inline-video, video, .feature-image img {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .inline-video, video, .feature-image img {
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08); /* Softer shadow in dark mode */
+    }
+}
+
