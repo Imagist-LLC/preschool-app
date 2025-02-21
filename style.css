@@ -193,6 +193,86 @@ body {
 }
 
 /* ============================
+    Features Section
+============================ */
+
+/* Default Side-by-Side Layout */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature.centered {
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Text Section */
+.feature-text {
+    width: 45%;
+    flex-shrink: 0;
+}
+
+/* Image Section */
+.feature-image {
+    width: 50%;
+    max-width: 700px;
+    position: relative;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+}
+
+/* Responsive for Wide Screenshots */
+
+/* ✅ 1. Stack Only Wide Images Earlier */
+@media (max-width: 1200px) {
+    .feature-image img.wide {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* ✅ 2. Stack Layout on Medium Screens (iPads, Tablets) */
+@media (max-width: 1024px) {
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .feature.reverse {
+        flex-direction: column;
+    }
+
+    .feature-text,
+    .feature-image {
+        width: 90%;
+    }
+}
+
+/* ✅ 3. Stack Layout on Small Screens (Phones) */
+@media (max-width: 768px) {
+    .feature-text,
+    .feature-image {
+        width: 100%;
+    }
+}
+/* ============================
     Call to Action
 ============================ */
 .cta {
