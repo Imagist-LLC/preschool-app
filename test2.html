@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
+
     <title>Preschool.app</title>
     <meta name="description" content="Preschool.app – A beautifully designed learning app for ages 1-5 with shapes, colors, and letters. Built by discerning parents, made for discerning children.">
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+  
     <meta name="apple-itunes-app" content="app-id=6742157181">
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Tiny Hands. Big Minds. Pure Learning.">
@@ -15,17 +18,17 @@
     <meta property="og:site_name" content="Preschool.app">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://preschool.app/">
+
     <link rel="preload" href="images/back.png" as="image">
     <link rel="preload" href="images/middle.png" as="image">
     <link rel="preload" href="images/front.png" as="image">
-    <script defer src="scripts.js"></script>
 </head>
 
 <body>
     <header class="hero">
         <h1>Tiny Hands.<br>Big Minds.</h1>
         <a href="https://apps.apple.com/app/id6742157181" class="icon-link">
-            <div class="icon-container" aria-label="App icon for Preschool.app">
+            <div class="icon-container" data-icon="preschool" aria-label="App icon for Preschool.app">
                 <div class="layer layer1" aria-hidden="true"></div>
                 <div class="layer layer2" aria-hidden="true"></div>
                 <div class="layer layer3" aria-hidden="true"></div>
@@ -47,14 +50,16 @@
             </figure>
         </section>
 
-        <!-- Video Sections -->
         <section class="feature reverse">
             <div class="feature-text">
                 <h2>Colors That Pop. And Bounce.</h2>
                 <p>Explore the rainbow with <strong>vibrant visuals</strong> and joyful animations. Every little tap and swipe invites <strong>playful discovery</strong> while remaining simple and frustration-free.</p>
             </div>
             <figure class="feature-image">
-                <video class="inline-video" playsinline autoplay muted loop loading="lazy" poster="images/colors.jpeg" data-light="images/colors-light.m4v" data-dark="images/colors.m4v"></video>
+                <video class="inline-video" playsinline autoplay muted loop loading="lazy" data-poster-light="images/colors-light.jpeg" data-poster-dark="images/colors.jpeg">
+                    <source src="images/colors-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+                    <source src="images/colors.m4v" type="video/mp4">
+                </video>
             </figure>
         </section>
 
@@ -64,7 +69,10 @@
                 <p>Children are free to <strong>explore</strong> each section and simply play. Later, they <strong>reinforce</strong> their learning through purposeful games and puzzles.</p>
             </div>
             <figure class="feature-image">
-                <video class="inline-video" playsinline autoplay muted loop loading="lazy" poster="images/shapes.jpeg" data-light="images/shapes-light.m4v" data-dark="images/shapes.m4v"></video>
+                <video class="inline-video" playsinline autoplay muted loop loading="lazy" data-poster-light="images/shapes-light.jpeg" data-poster-dark="images/shapes.jpeg">
+                    <source src="images/shapes-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+                    <source src="images/shapes.m4v" type="video/mp4">
+                </video>
             </figure>
         </section>
 
@@ -74,7 +82,10 @@
                 <p>Letters share their sounds, colors tell their names, and objects introduce themselves when tapped. No forced excitement or silly voices—just <strong>clear</strong> pronunciation that makes everything <strong>click</strong>.</p>
             </div>
             <figure class="feature-image">
-                <video class="inline-video" playsinline autoplay muted loop loading="lazy" poster="images/letters.jpeg" data-light="images/letters-light.m4v" data-dark="images/letters.m4v"></video>
+                <video class="inline-video" playsinline autoplay muted loop loading="lazy" data-poster-light="images/letters-light.jpeg" data-poster-dark="images/letters.jpeg">
+                    <source src="images/letters-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+                    <source src="images/letters.m4v" type="video/mp4">
+                </video>
             </figure>
         </section>
 
@@ -84,8 +95,18 @@
                 <p>From <strong>&#xF8FF; Watch</strong> to <strong>&#xF8FF; TV</strong>, and everything in between, Preschool.app makes early learning <strong>accessible</strong> to all. Use a keyboard, touch screen, trackpad, or remote—it adapts to every young learner's needs.</p>
             </div>
             <figure class="feature-image">
-                <video class="inline-video" playsinline autoplay muted loop loading="lazy" poster="images/adaptation.png" data-light="images/adaptation-light.m4v" data-dark="images/adaptation.m4v"></video>
+                <video class="inline-video" playsinline autoplay muted loop loading="lazy" data-poster-light="images/adaptation-light.jpeg" data-poster-dark="images/adaptation.jpeg">
+                    <source src="images/adaptation-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+                    <source src="images/adaptation.m4v" type="video/mp4">
+                </video>
             </figure>
+        </section>
+
+        <section class="feature" id="privacy">
+            <div class="feature-text">
+                <h2>A Parent's Code.</h2>
+                <p>Preschool.app was created <strong>for our daughter</strong>—not a focus group. We don't want your data, so we <a href="https://imagist.freshdesk.com/a/solutions/articles/157000192677">don't ask</a> for it. No ads. No tracking. No engagement loops. Just pure learning.</p>
+            </div>
         </section>
 
         <section class="feature centered">
@@ -93,11 +114,6 @@
                 <h2>Growing. Smarter.</h2>
                 <p>We're off to a beautiful start, but it's <strong>just the beginning</strong>. <a href="https://features.vote/app/preschool">Upcoming features</a> will include <strong>Numbers</strong>, <strong>Objects</strong>, <strong>Opposites</strong>, and <strong>Emotions</strong>—each designed with the same thoughtful approach.</p>
             </div>
-            <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.934 112.02">
-                <g>
-                    <path d="M111.934 55.9883C111.934 86.7969 86.7969 111.934 55.9453 111.934C25.1367 111.934 0 86.7969 0 55.9883C0 25.1367 25.1367 0 55.9453 0C86.7969 0 111.934 25.1367 111.934 55.9883ZM28.4453 34.0312C28.0156 36.7383 27.6719 40.1758 27.6719 42.4531C27.6719 61.7891 39.1016 74.6367 56.4609 74.6367C64.582 74.6367 70.125 71.0703 72.6602 67.5469C74.9805 70.5547 76.1406 73.6484 77.6016 78.4609C77.9883 79.6641 78.8477 80.0938 79.707 80.0938C81.5977 80.0938 83.1016 78.4609 83.1016 76.1836C83.1016 72.5312 78.1172 66.3008 75.4531 63.8086C64.2383 53.4102 47.4375 59.5547 42.625 48.168C42.2383 47.3086 43.1836 46.5781 44.0859 47.3516C53.1953 55.5156 64.0664 48.9414 75.4531 59.125C76.2266 59.8984 77.2148 59.5117 77.3867 58.6523C77.4727 57.8789 77.6016 56.6328 77.6016 55.4297C77.6016 42.8828 68.8789 36.9531 56.5469 36.9531C52.4219 36.9531 47.8242 37.8984 44.043 37.8984C39.5742 37.8984 34.8047 37.2969 31.1953 33.3867C30.1641 32.3125 28.7461 32.4414 28.4453 34.0312Z" fill="currentColor" fill-opacity="0.85"/>
-                </g>
-            </svg>
         </section>
 
         <section class="quote-block">
@@ -113,16 +129,5 @@
     </footer>
 
     <div class="easter-egg">Here’s to the crazy <i>little</i> ones.</div>
-
-    <script>
-        // JavaScript to set video posters based on light/dark mode
-        document.addEventListener('DOMContentLoaded', () => {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.querySelectorAll('.inline-video').forEach(video => {
-                const src = prefersDark ? video.dataset.dark : video.dataset.light;
-                video.src = src;
-            });
-        });
-    </script>
 </body>
 </html>
