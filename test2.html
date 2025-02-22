@@ -26,56 +26,31 @@
         <h1>Tiny Hands.<br>Big Minds.</h1>
 
 <a href="https://apps.apple.com/app/id6742157181" class="icon-link">
-<svg width="176" height="176" viewBox="0 0 1100 1100" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
-    <style>
-        /* Keyframe bounce animation */
-        @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }  /* Bigger bounce */
-        }
+    <div class="icon-container">
+        <svg width="150" height="150" viewBox="0 0 1100 1100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Invisible Padding Layer -->
+            <rect x="-40" y="-40" width="1180" height="1180" fill="transparent"/>
 
-        /* Smooth transitions */
-        .layer {
-            transition: transform 0.4s ease, fill 0.4s ease, filter 0.4s ease;
-            transform-origin: center;
-            filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3)); /* Slightly stronger shadow */
-        }
+            <!-- Red Rounded Background (Back Layer) -->
+            <rect class="layer layer1" x="50" y="50" width="1000" height="1000" rx="200" ry="200" fill="#ff0b18"/>
 
-        /* Hover effects */
-        svg:hover .layer1 {
-            animation: bounce 0.6s ease-out;
-        }
-        svg:hover .layer2 {
-            animation: bounce 0.6s ease-out 0.1s;
-        }
-        svg:hover .layer3 {
-            animation: bounce 0.6s ease-out 0.2s;
-        }
-    </style>
+            <!-- Orange Gradient Middle Layer -->
+            <linearGradient id="gradient1" x1="196" y1="568" x2="828" y2="568" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 550 550)">
+                <stop offset="0" stop-color="#ff8500"/>
+                <stop offset="1" stop-color="#ffc900"/>
+            </linearGradient>
+            <rect class="layer layer2" x="172" y="300" width="756" height="600" rx="120" ry="120" fill="url(#gradient1)"/>
 
-    <!-- Invisible Padding Layer -->
-    <rect x="-40" y="-40" width="1180" height="1180" fill="transparent"/>
-
-    <!-- Red Rounded Background (Back Layer) -->
-    <rect class="layer layer1" x="50" y="50" width="1000" height="1000" rx="200" ry="200" fill="#ff0b18"/>
-
-    <!-- Orange Gradient Middle Layer -->
-    <linearGradient id="gradient1" x1="196" y1="568" x2="828" y2="568" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 550 550)">
-        <stop offset="0" stop-color="#ff8500"/>
-        <stop offset="1" stop-color="#ffc900"/>
-    </linearGradient>
-    <rect class="layer layer2" x="172" y="300" width="756" height="600" rx="120" ry="120" fill="url(#gradient1)"/>
-
-    <!-- Blue Gradient Front Layer -->
-    <linearGradient id="gradient2" x1="352" y1="630.5" x2="671" y2="630.5" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 550 550)">
-        <stop offset="0" stop-color="#007cff"/>
-        <stop offset="1" stop-color="#00bcff"/>
-    </linearGradient>
-    <rect class="layer layer3" x="276" y="500" width="548" height="300" rx="80" ry="80" fill="url(#gradient2)"/>
-</svg>
+            <!-- Blue Gradient Front Layer -->
+            <linearGradient id="gradient2" x1="352" y1="630.5" x2="671" y2="630.5" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 550 550)">
+                <stop offset="0" stop-color="#007cff"/>
+                <stop offset="1" stop-color="#00bcff"/>
+            </linearGradient>
+            <rect class="layer layer3" x="276" y="500" width="548" height="300" rx="80" ry="80" fill="url(#gradient2)"/>
+        </svg>
+    </div>
     <div class="icon-label">Preschool.app</div>
 </a>
-        
                <!-- <p class="subtitle">A simple, carefully crafted learning app for ages 1–5.</p> -->
          <p class="subtitle">A thoughtfully crafted app for young learners.</p> 
     </header>
