@@ -777,3 +777,58 @@ video, img {
         border-radius: clamp(8px, 2vw, 24px);
     }
 }
+/* ============================
+    Responsive Portrait Videos - FINAL FIX
+============================ */
+
+.inline-video {
+    width: 100%;
+    max-width: 500px;  /* ✅ Limit video size on large screens */
+    height: auto;
+    aspect-ratio: 9 / 16;  /* ✅ Proper portrait ratio */
+    object-fit: contain;  /* ✅ Prevent clipping */
+    display: block;
+    margin: 0 auto;
+    border-radius: clamp(8px, 2vw, 24px);
+    overflow: hidden;
+}
+
+/* ✅ Full Width on Small Screens (iPhone) */
+@media (max-width: 768px) {
+    .inline-video {
+        width: 100vw;
+        max-width: 100vw;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        object-fit: contain;
+        border-radius: 0;  /* ✅ Edge-to-edge on small devices */
+    }
+}
+
+/* ✅ Ensure No Forced Height Causes Clipping */
+.feature-image {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: clamp(8px, 2vw, 24px);
+    display: block;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;  /* ✅ No more stretching or clipping */
+    border-radius: inherit;
+}
+
+/* ✅ No More Clipping or Forced Aspect Ratios */
+@media (max-width: 480px) {
+    .inline-video {
+        width: 100vw;
+        height: calc(100vw * 1.77);  /* ✅ Perfect for portrait */
+        object-fit: contain;
+        border-radius: 0;
+    }
+}
