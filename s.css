@@ -10,10 +10,10 @@
   --bg-color: #000;
   --text-color: #bbb;
   --accent-color: #007aff;
+  --heading-color: #fff;
   --primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --shadow-dark: 0 8px 16px rgba(255, 255, 255, 0.08);
   --shadow-light: 0 8px 16px rgba(0, 0, 0, 0.15);
-  --heading-color: #fff;
 }
 
 [data-theme="light"] {
@@ -102,7 +102,7 @@ body {
   margin-bottom: 16px;
 }
 
-/* Strong tag styling */
+/* Strong Tag Styling */
 strong {
   color: var(--heading-color);
   font-weight: 500;
@@ -161,6 +161,18 @@ strong {
   cursor: pointer;
 }
 
+/* Ensure SVG icons use the heading color */
+.theme-icon,
+.icon {
+  color: var(--heading-color);
+  fill: currentColor;
+}
+
+/* Make the lightbulb icon (toggle) brighter */
+.theme-toggle .light-icon {
+  color: #ffeb3b; /* Bright yellow */
+}
+
 /* Bounce Animations */
 @keyframes bounce-effect-layer1 {
   0%, 100% { transform: scale(1); }
@@ -209,6 +221,39 @@ strong {
   overflow: visible;
 }
 
+/* Theme Toggle Button (Icon Only) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  border: 2px solid currentColor;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Hide one icon depending on the active theme */
+[data-theme="dark"] .theme-toggle .dark-icon {
+  display: none;
+}
+[data-theme="dark"] .theme-toggle .light-icon {
+  display: inline-block;
+}
+[data-theme="light"] .theme-toggle .light-icon {
+  display: none;
+}
+[data-theme="light"] .theme-toggle .dark-icon {
+  display: inline-block;
+}
+
+/* Theme Toggle Hover */
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* Quote Block */
 .quote-block {
   text-align: center;
@@ -235,13 +280,13 @@ strong {
 }
 
 .quote-block blockquote::before {
-  content: "\"";
+  content: "\201C"; /* Left double quotation mark */
   top: -40px;
   left: -20px;
 }
 
 .quote-block blockquote::after {
-  content: "\"";
+  content: "\201D"; /* Right double quotation mark */
   bottom: -40px;
   right: -20px;
 }
@@ -275,13 +320,6 @@ strong {
   color: var(--text-color);
   margin-top: 20px;
   opacity: 0.8;
-}
-
-/* Icons */
-.icon {
-  width: 88px;
-  height: 88px;
-  fill: currentColor;
 }
 
 /* Link Styling */
@@ -345,7 +383,7 @@ a:hover {
     border-radius: 0;
   }
   .inline-video {
-    width: 100%; /* Changed from 100vw to 100% to avoid clipping on iOS */
+    width: 100%; /* Using 100% to avoid clipping on iOS */
     border-radius: 0;
     margin: 0;
   }
@@ -373,25 +411,6 @@ a:hover {
     width: 100%;
     border-radius: 0;
   }
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border: 2px solid currentColor;
-  border-radius: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 16px;
-  background: transparent;
-  color: inherit;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Light mode hover fix */
