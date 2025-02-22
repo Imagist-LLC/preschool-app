@@ -929,7 +929,7 @@ video {
 @media (max-width: 480px) {
     .feature-image, .inline-video {
         width: 100vw !important;
-        height: calc(100vw * 1.6) !important;  /* ✅ Slight vertical clipping */
+        height: calc(100vw * 1.7) !important;  /* ✅ Slight vertical clipping */
         border-radius: 0 !important;
     }
 }
