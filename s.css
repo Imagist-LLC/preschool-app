@@ -161,97 +161,41 @@ strong {
   cursor: pointer;
 }
 
-/* Ensure SVG icons use the heading color */
+/* Ensure SVG icons use the heading color and size the .icon elements */
 .theme-icon,
 .icon {
   color: var(--heading-color);
   fill: currentColor;
 }
 
-/* Make the lightbulb icon (toggle) brighter 
-.theme-toggle .light-icon {
-  color: #ffeb3b; Bright yellow */
+.icon {
+  width: 88px;
+  height: 88px;
 }
 
-/* Bounce Animations */
-@keyframes bounce-effect-layer1 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-@keyframes bounce-effect-layer2 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-@keyframes bounce-effect-layer3 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-.layer {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 24px;
-  transition: transform 0.2s ease-out;
-  transform-origin: center;
-  will-change: transform;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-.icon-container:hover .layer1 {
-  animation: bounce-effect-layer1 0.6s ease-out;
-}
-
-.icon-container:hover .layer2 {
-  animation: bounce-effect-layer2 0.6s ease-out 0.1s;
-}
-
-.icon-container:hover .layer3 {
-  animation: bounce-effect-layer3 0.6s ease-out 0.2s;
-}
-
-.icon-container svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-/* Theme Toggle Button (Icon Only) */
+/* Theme Toggle Button (Icon Only) - no chrome */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
-  padding: 8px;
-  border: 2px solid currentColor;
-  border-radius: 20px;
-  font-weight: 500;
   cursor: pointer;
-  background: transparent;
-  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   transition: all 0.3s ease;
 }
 
-/* Hide one icon depending on the active theme */
-[data-theme="dark"] .theme-toggle .dark-icon {
+/* Show only one SVG icon at a time in the toggle button */
+.theme-toggle svg {
   display: none;
 }
+
 [data-theme="dark"] .theme-toggle .light-icon {
   display: inline-block;
 }
-[data-theme="light"] .theme-toggle .light-icon {
-  display: none;
-}
+
 [data-theme="light"] .theme-toggle .dark-icon {
   display: inline-block;
-}
-
-/* Theme Toggle Hover */
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Quote Block */
