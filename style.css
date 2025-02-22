@@ -832,3 +832,88 @@ video {
         border-radius: 0;
     }
 }
+
+
+
+
+
+/* ============================
+    Responsive Video - FINAL FIX
+============================ */
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;  /* ✅ Allow wrapping when screen is small */
+}
+
+/* Image Section */
+.feature-image {
+    width: 50%;
+    max-width: 500px;   /* ✅ Limit size on large screens */
+    overflow: hidden;
+    border-radius: clamp(8px, 2vw, 24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 9 / 16;  /* ✅ Portrait ratio maintained */
+}
+
+.inline-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* ✅ Fit without clipping */
+    border-radius: inherit;
+    display: block;
+}
+
+/* ✅ Responsive for Smaller Screens */
+@media (max-width: 1024px) {
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .feature-image {
+        width: 70%;
+        max-width: 400px; /* ✅ Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-image {
+        width: 90%;
+        max-width: 100vw;   /* ✅ Full width on small screens */
+        border-radius: 0;
+        aspect-ratio: 9 / 16;
+    }
+
+    .inline-video {
+        width: 100vw;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ✅ Edge-to-Edge on Smallest Devices (iPhone) */
+@media (max-width: 480px) {
+    .feature-image {
+        width: 100vw;
+        max-width: 100vw;
+        height: calc(100vw * 1.77); /* ✅ Perfect portrait ratio */
+        border-radius: 0;
+    }
+
+    .inline-video {
+        width: 100vw;
+        height: calc(100vw * 1.77);
+        object-fit: contain;
+    }
+}
