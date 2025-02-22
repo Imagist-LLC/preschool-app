@@ -1,21 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const videos = document.querySelectorAll(".inline-video");
 
-    function updateVideoSources() {
-        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+document.addEventListener('DOMContentLoaded', function () {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        const lightPoster = video.querySelector('source[media="(prefers-color-scheme: light)"]').getAttribute('src');
+        const darkPoster = video.querySelector('source:not([media])').getAttribute('src');
+        const imgFallback = video.querySelector('img');
 
-        videos.forEach((video) => {
-            const source = prefersDarkMode ? video.dataset.dark : video.dataset.light;
-            const poster = prefersDarkMode ? video.dataset.darkPoster : video.dataset.lightPoster;
-
-            if (source) video.src = source;
-            if (poster) video.poster = poster;
-        });
-    }
-
-    // Initial update
-    updateVideoSources();
-
-    // Listen for theme changes
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateVideoSources);
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            imgFallback.src = lightPoster.replace('.m4v', '.jpeg');
+        } else {
+            imgFallback.src = darkPoster.replace('.m4v', '.jpeg');
+        }
+    });
 });
