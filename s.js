@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial update based on current theme preference
     updateVideoSources(shouldUseDark());
+    // Set initial data-theme attribute so the toggle button shows only one icon
+    document.documentElement.setAttribute('data-theme', shouldUseDark() ? 'dark' : 'light');
 
     // Listen for system color scheme changes if in 'system' mode
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
