@@ -15,82 +15,28 @@ body {
 }
 
 /* ============================
-    Icon Layers
+    Layout
 ============================ */
-.icon-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
+.hero {
+    text-align: center;
+    padding: 100px 5vw;
+    max-width: 900px;
     margin: 0 auto;
-    background: linear-gradient(135deg, #ff8c00, #ff4081);
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
 }
 
-.layer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    border-radius: 24px;
-    transition: transform 0.2s ease-out;
-    opacity: 1;
-    visibility: visible;
-    will-change: transform, opacity;
+.hero h1 {
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.layer1 {
-    background-image: url('images/back.png');
+.hero .subtitle {
+    font-size: 1.8rem;
+    color: #bbb;
+    margin-bottom: 50px;
 }
 
-.layer2 {
-    background-image: url('images/middle.png');
-}
-
-.layer3 {
-    background-image: url('images/front.png');
-}
-
-/* ✅ Hover Animation */
-@keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.08); }
-}
-
-@keyframes bounce-effect-layer2 {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); }
-}
-
-@keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.12); }
-}
-
-.icon-container:hover .layer1 {
-    animation: bounce-effect-layer1 0.4s ease-out;
-}
-
-.icon-container:hover .layer2 {
-    animation: bounce-effect-layer2 0.4s ease-out;
-    animation-delay: 0.05s;
-}
-
-.icon-container:hover .layer3 {
-    animation: bounce-effect-layer3 0.4s ease-out;
-    animation-delay: 0.1s;
-}
-
-/* ============================
-    Layout + Videos
-============================ */
 .feature {
     display: flex;
     align-items: center;
@@ -113,58 +59,94 @@ body {
 .feature-text {
     width: 45%;
     flex-shrink: 0;
-}
-
-.feature-text h2 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: white;
-    line-height: 1.1;
-}
-
-.feature-text p {
-    font-size: 1.3rem;
-    color: #bbb;
+    text-align: left;
 }
 
 .feature-image {
-    width: 45%;
-    position: relative;
+    width: 50%;
     max-width: 500px;
     margin: 0 auto;
     border-radius: clamp(8px, 2vw, 24px);
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================
+    Icon Layers
+============================ */
+.icon-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
 }
 
-.inline-video, video, img {
+.layer {
     width: 100%;
-    max-width: 500px;  /* ✅ Keeps iPhone portrait size limit */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    border-radius: 24px;
+    transition: transform 0.2s ease-out;
+    opacity: 1;
+}
+
+.layer1 { background-image: url('images/back.png'); }
+.layer2 { background-image: url('images/middle.png'); }
+.layer3 { background-image: url('images/front.png'); }
+
+/* ============================
+    Hover Animation
+============================ */
+@keyframes bounce-effect-layer1 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes bounce-effect-layer2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes bounce-effect-layer3 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+.icon-container:hover .layer1 { animation: bounce-effect-layer1 0.4s ease-out; }
+.icon-container:hover .layer2 { animation: bounce-effect-layer2 0.4s ease-out 0.05s; }
+.icon-container:hover .layer3 { animation: bounce-effect-layer3 0.4s ease-out 0.1s; }
+
+/* ============================
+    Video & Images
+============================ */
+.inline-video, video {
+    width: 100%;
+    max-width: 500px;
     height: auto;
     object-fit: contain;
-    border-radius: inherit;
-    display: block;
+    border-radius: clamp(8px, 2vw, 24px);
     overflow: hidden;
+    display: block;
     margin: 0 auto;
-    transition: all 0.3s ease;
 }
 
-/* ✅ Responsive Adjustments */
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border-radius: clamp(8px, 2vw, 24px);
+    object-fit: cover;
+}
+
+/* ============================
+    Responsive Design
+============================ */
 @media (max-width: 1024px) {
     .feature {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 50px;
     }
 
     .feature.reverse {
         flex-direction: column;
-    }
-
-    .feature-text,
-    .feature-image {
-        width: 80%;
     }
 }
 
@@ -182,4 +164,37 @@ body {
 @media (prefers-color-scheme: light) {
     body { color: #555; background-color: #fff; }
     strong { color: #000; font-weight: 500; }
+}
+
+/* ============================
+    Footer
+============================ */
+.cta {
+    text-align: center;
+    padding: 100px 5vw;
+}
+
+.cta .button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta .button:hover {
+    background-color: #bbb;
+    border-color: #555;
+}
+
+.cta .footer-caption {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 20px;
+    opacity: 0.8;
 }
