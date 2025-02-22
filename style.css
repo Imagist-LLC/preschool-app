@@ -732,171 +732,48 @@ video, img {
 
 
 /* ============================
-    Responsive Video - FIXED
-============================ */
-.inline-video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16;
-    object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
-    display: block;
-    margin: 0 auto;
-}
-@media (max-width: 768px) {
-    .inline-video {
-        width: 100vw; /* Full width on smaller devices */
-        max-width: 100vw;
-        border-radius: 0; /* Edge-to-edge for iPhone */
-    }
-}
-
-@media (max-width: 480px) {
-    .inline-video {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 0; /* Full width with no border radius */
-    }
-}
-
-/* ============================
-    Responsive Portrait Videos - FINAL FIX
-============================ */
-.inline-video {
-    width: 100%;
-    max-width: 400px;   /* ✅ Limit max width to avoid stretching */
-    height: auto;
-    aspect-ratio: 9 / 16;  /* ✅ Portrait ratio */
-    object-fit: contain;   /* ✅ No cropping */
-    border-radius: clamp(8px, 2vw, 24px);
-    display: block;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .inline-video {
-        width: 70vw;  /* ✅ Wider on tablets and small laptops */
-        max-width: 70vw;
-        aspect-ratio: 9 / 16;
-        border-radius: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .inline-video {
-        width: 80vw;  /* ✅ Wider on small phones */
-        max-width: 80vw;
-        aspect-ratio: 9 / 16;
-        border-radius: 12px;
-    }
-}
-
-/* ============================
-    Portrait Video Fix - iPhone
-============================ */
-.inline-video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16; /* Portrait by default */
-    object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
-    display: block;
-    margin: 0 auto;
-}
-
-/* iPhone-specific tweak: Allow video to scale without strict height */
-@media (max-width: 768px) {
-    .inline-video {
-        width: 100vw;        /* Full width */
-        max-width: 100vw;
-        height: auto;        /* Let the height auto-adjust */
-        aspect-ratio: auto;  /* Allow natural portrait ratio */
-        border-radius: 0;    /* Edge-to-edge for iPhone */
-    }
-}
-
-/* Extra small devices (like iPhone SE) */
-@media (max-width: 480px) {
-    .inline-video {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto;        /* Prevents narrow tall look */
-        aspect-ratio: auto;  /* Allow portrait scaling */
-        border-radius: 0;
-    }
-}
-
-/* ============================
-    Portrait Video Fix - iPhone
-============================ */
-.inline-video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16; /* Portrait by default */
-    object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
-    display: block;
-    margin: 0 auto;
-}
-
-/* iPhone-specific tweak: Allow video to scale without strict height */
-@media (max-width: 768px) {
-    .inline-video {
-        width: 100vw;        /* Full width */
-        max-width: 100vw;
-        height: auto;        /* Let the height auto-adjust */
-        aspect-ratio: auto;  /* Allow natural portrait ratio */
-        border-radius: 0;    /* Edge-to-edge for iPhone */
-    }
-}
-
-/* Extra small devices (like iPhone SE) */
-@media (max-width: 480px) {
-    .inline-video {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto;        /* Prevents narrow tall look */
-        aspect-ratio: auto;  /* Allow portrait scaling */
-        border-radius: 0;
-    }
-}
-
-/* ============================
     Responsive Video - FINAL FIX
 ============================ */
 .inline-video {
     width: 100%;
-    max-width: 500px; /* Default max width for larger screens */
+    max-width: 700px;
     height: auto;
-    aspect-ratio: 9 / 16;
-    object-fit: contain; /* Ensure no clipping */
+    object-fit: contain;
+    aspect-ratio: auto; /* Allow the video to define its own ratio */
     border-radius: clamp(8px, 2vw, 24px);
     display: block;
     margin: 0 auto;
 }
 
-/* Small screens - Full width without clipping */
+/* ✅ iPhone Portrait and Small Screens */
 @media (max-width: 768px) {
     .inline-video {
-        width: 100vw;
+        width: 100vw; /* Full width on small devices */
         max-width: 100vw;
-        height: auto;
-        border-radius: 0;
+        height: calc(100vw * 1.77); /* Maintain 9:16 ratio */
+        object-fit: cover;
+        border-radius: 0; /* Edge-to-edge */
     }
 }
 
-/* Very small screens - Ensure no vertical clipping */
+/* ✅ Extra Small Phones */
 @media (max-width: 480px) {
     .inline-video {
         width: 100vw;
         max-width: 100vw;
+        height: calc(100vw * 1.77); /* Maintain 9:16 ratio */
+        object-fit: contain; /* Prevent zoomed-in clipping */
+    }
+}
+
+/* ✅ Landscape Mode */
+@media (orientation: landscape) {
+    .inline-video {
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        aspect-ratio: 9 / 16; /* Maintain portrait ratio */
-        object-fit: contain;  /* Prevent any cropping */
-        border-radius: 0;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        border-radius: clamp(8px, 2vw, 24px);
     }
 }
