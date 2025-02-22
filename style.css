@@ -74,6 +74,7 @@ body {
 /* ============================
     Icon Layers
 ============================ */
+/* Icon Container */
 .icon-container {
     width: 150px;
     height: 150px;
@@ -85,6 +86,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Individual Layers */
 .layer {
     width: 100%;
     height: 100%;
@@ -93,24 +95,57 @@ body {
     left: 0;
     background-size: cover;
     border-radius: 24px;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     opacity: 1;
+    visibility: visible;
+    will-change: transform, opacity;
 }
 
-.layer1 { background-image: url('images/back.png'); }
-.layer2 { background-image: url('images/middle.png'); }
-.layer3 { background-image: url('images/front.png'); }
+.layer1 {
+    background-image: url('images/back.png');
+    z-index: 1;
+}
 
-/* ============================
-    Hover Animation
-============================ */
-@keyframes bounce-effect-layer1 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
-@keyframes bounce-effect-layer2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-@keyframes bounce-effect-layer3 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.layer2 {
+    background-image: url('images/middle.png');
+    z-index: 2;
+}
 
-.icon-container:hover .layer1 { animation: bounce-effect-layer1 0.4s ease-out; }
-.icon-container:hover .layer2 { animation: bounce-effect-layer2 0.4s ease-out 0.05s; }
-.icon-container:hover .layer3 { animation: bounce-effect-layer3 0.4s ease-out 0.1s; }
+.layer3 {
+    background-image: url('images/front.png');
+    z-index: 3;
+}
+
+/* Hover Animation */
+@keyframes bounce-effect-layer1 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes bounce-effect-layer2 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce-effect-layer3 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); }
+}
+
+.icon-container:hover .layer1 {
+    animation: bounce-effect-layer1 0.4s ease-out;
+    animation-delay: 0s;
+}
+
+.icon-container:hover .layer2 {
+    animation: bounce-effect-layer2 0.4s ease-out;
+    animation-delay: 0.05s;
+}
+
+.icon-container:hover .layer3 {
+    animation: bounce-effect-layer3 0.4s ease-out;
+    animation-delay: 0.1s;
+}
 
 /* ============================
     Video & Images
