@@ -760,3 +760,35 @@ video, img {
         border-radius: 0; /* Full width with no border radius */
     }
 }
+
+/* ============================
+    Responsive Portrait Videos - FINAL FIX
+============================ */
+.inline-video {
+    width: 100%;
+    max-width: 400px;   /* ✅ Limit max width to avoid stretching */
+    height: auto;
+    aspect-ratio: 9 / 16;  /* ✅ Portrait ratio */
+    object-fit: contain;   /* ✅ No cropping */
+    border-radius: clamp(8px, 2vw, 24px);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .inline-video {
+        width: 70vw;  /* ✅ Wider on tablets and small laptops */
+        max-width: 70vw;
+        aspect-ratio: 9 / 16;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inline-video {
+        width: 80vw;  /* ✅ Wider on small phones */
+        max-width: 80vw;
+        aspect-ratio: 9 / 16;
+        border-radius: 12px;
+    }
+}
