@@ -498,9 +498,12 @@ a:visited {
     }
 
     .inline-video {
-        width: 100%;
+      
         border-radius: 0;
     }
+    .inline-video {
+  width: calc(100vw - env(safe-area-inset-right) - env(safe-area-inset-left));
+}
 }
 
 
