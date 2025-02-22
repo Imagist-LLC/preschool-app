@@ -1,6 +1,8 @@
 /* ============================
-    General Styling
+    Restored Original CSS
 ============================ */
+
+/* ✅ General Styling */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -10,13 +12,16 @@ body {
     color: #fff;
     background-color: #000;
     line-height: 1.6;
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: hidden;
 }
 
-/* ============================
-    Icon Layers
-============================ */
+.feature-text {
+    width: 55%;
+    max-width: 900px;
+}
+
+/* ✅ Icon Layers */
 .icon-container {
     width: 150px;
     height: 150px;
@@ -37,37 +42,58 @@ body {
     background-size: cover;
     border-radius: 24px;
     transition: transform 0.2s ease-out;
-    opacity: 1;
-    visibility: visible;
-    will-change: transform, opacity;
 }
 
-.layer1 { background-image: url('images/back.png'); }
-.layer2 { background-image: url('images/middle.png'); }
-.layer3 { background-image: url('images/front.png'); }
+#layer1 {
+    background-image: url('images/back.png');
+}
+
+#layer2 {
+    background-image: url('images/middle.png');
+}
+
+#layer3 {
+    background-image: url('images/front.png');
+}
 
 @keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); opacity: 1; }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.08); }
 }
 
 @keyframes bounce-effect-layer2 {
-    0%, 100% { transform: scale(1); opacity: 1; }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
 
 @keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); opacity: 1; }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.12); }
 }
 
-.icon-container:hover .layer1 { animation: bounce-effect-layer1 0.4s ease-out; }
-.icon-container:hover .layer2 { animation: bounce-effect-layer2 0.4s ease-out 0.05s; }
-.icon-container:hover .layer3 { animation: bounce-effect-layer3 0.4s ease-out 0.1s; }
+.icon-container:hover #layer1 {
+    animation: bounce-effect-layer1 0.6s ease-out;
+}
 
-/* ============================
-    Easter Egg
-============================ */
+.icon-container:hover #layer2 {
+    animation: bounce-effect-layer2 0.6s ease-out;
+}
+
+.icon-container:hover #layer3 {
+    animation: bounce-effect-layer3 0.6s ease-out;
+}
+
+/* ✅ Responsive Video */
+.inline-video {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: clamp(8px, 2vw, 24px);
+    overflow: hidden;
+}
+
+/* ✅ Easter Egg */
 .easter-egg {
     font-size: 0.8rem;
     color: #fff;
@@ -86,84 +112,46 @@ body {
     pointer-events: auto;
 }
 
-/* ============================
-    Links
-============================ */
+/* ✅ Links */
 a {
     color: #007aff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:hover { text-decoration: underline; }
+a:hover {
+    text-decoration: none;
+}
 
-a:visited { color: #007aff; }
+a:visited {
+    color: #007aff;
+}
 
 a:focus {
     outline: none;
     border-bottom: 2px solid #007aff;
 }
 
-/* ============================
-    Responsive Layout
-============================ */
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 5vw;
-}
-
-.feature.reverse { flex-direction: row-reverse; }
-.feature.centered { text-align: center; flex-direction: column; }
-
+/* ✅ Responsive Layout */
 @media (max-width: 1024px) {
-    .feature { flex-direction: column; text-align: center; gap: 50px; }
-    .feature.reverse { flex-direction: column; }
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .feature.reverse {
+        flex-direction: column;
+    }
+
+    .feature-text, .feature-image {
+        width: 80%;
+    }
 }
 
 @media (max-width: 768px) {
-    .feature-text, .feature-image { width: 100%; }
-    .inline-video, .feature-image { max-width: 90%; }
+    .feature-text, .feature-image {
+        width: 100%;
+    }
 }
 
-/* ============================
-    Video
-============================ */
-.inline-video, video {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: contain;
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-}
-
-.feature-image {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-}
-
-/* ============================
-    Dark/Light Mode
-============================ */
-@media (prefers-color-scheme: dark) {
-    body { color: #bbb; background-color: #000; }
-    strong { color: #fff; font-weight: 500; }
-}
-
-@media (prefers-color-scheme: light) {
-    body { color: #555; background-color: #fff; }
-    strong { color: #000; font-weight: 500; }
-}
