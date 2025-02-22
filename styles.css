@@ -90,6 +90,36 @@ body {
     margin-bottom: 16px;
 }
 
+/* ============================
+    Video and Image Containers
+============================ */
+.feature-image {
+    width: 45%;
+    max-width: 500px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    border-radius: clamp(8px, 2vw, 24px);
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    border-radius: clamp(8px, 2vw, 24px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.inline-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: clamp(8px, 2vw, 24px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
 
 /* ============================
     Icon and Layers
@@ -112,6 +142,20 @@ body {
     color: white;
 }
 
+.icon-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-container:hover {
+    transform: scale(1.05);
+}
+
 .layer {
     width: 100%;
     height: 100%;
@@ -128,10 +172,6 @@ body {
 .layer1 { background-image: url('images/back.png'); }
 .layer2 { background-image: url('images/middle.png'); }
 .layer3 { background-image: url('images/front.png'); }
-
-.icon-container:hover {
-    transform: scale(1.05);
-}
 
 /* ============================
     Quote Block
@@ -205,6 +245,16 @@ body {
 }
 
 /* ============================
+    Icons
+============================ */
+.icon {
+    width: 88px;
+    height: 88px;
+    fill: currentColor;
+    color: #007aff;
+}
+
+/* ============================
     Link Styling
 ============================ */
 a {
@@ -218,16 +268,6 @@ a:hover {
 }
 
 a:visited {
-    color: #007aff;
-}
-
-/* ============================
-    Icons
-============================ */
-.icon {
-    width: 88px;
-    height: 88px;
-    fill: currentColor;
     color: #007aff;
 }
 
@@ -277,6 +317,10 @@ a:visited {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
+    .feature-image img {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
     .cta .button {
         color: #fff;
         background-color: #000;
@@ -297,6 +341,10 @@ a:visited {
 ============================ */
 @media (prefers-color-scheme: dark) {
     .inline-video {
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-image img {
         box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08);
     }
 
@@ -373,84 +421,6 @@ a:visited {
 /* ============================
     iPhone Specific Fixes
 ============================ */
-@supports (-webkit-touch-callout: none) {
-    .feature-image {
-        transform: translateX(0);
-        width: 100vw;
-        margin-left: -16px;
-    }
-
-    .inline-video {
-        width: 100%;
-        border-radius: 0;
-    }
-}
-
-
-
-
-/* Feature Image Container */
-.feature-image {
-    width: 45%;
-    max-width: 500px;
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    border-radius: clamp(8px, 2vw, 24px);
-}
-
-/* Video Styles */
-.inline-video {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 9/16;
-    object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    display: none; /* Hide both by default */
-}
-
-/* Dark Mode (default) */
-.inline-video.dark-mode {
-    display: block;
-}
-
-.inline-video.light-mode {
-    display: none;
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-    .inline-video.dark-mode {
-        display: none;
-    }
-    
-    .inline-video.light-mode {
-        display: block;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-}
-
-/* Mobile Optimizations */
-@media (max-width: 768px) {
-    .feature-image {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        border-radius: 0;
-    }
-
-    .inline-video {
-        width: 100vw;
-        border-radius: 0;
-        margin: 0 -16px;
-    }
-}
-
-/* iPhone Specific Fixes */
 @supports (-webkit-touch-callout: none) {
     .feature-image {
         transform: translateX(0);
