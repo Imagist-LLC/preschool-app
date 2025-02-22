@@ -87,8 +87,12 @@ html, body {
     overflow: hidden;
     position: relative;
     margin: 0 auto;
-   background: linear-gradient(135deg, #ff8c00, #ff4081); /* Mostly red gradient */
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ff8c00, #ff4081);
+    transition: transform 0.3s ease; /* Only apply transition to the icon */
+}
+
+.icon-link:hover .icon-container {
+    transform: scale(1.1);
 }
 
 .icon-label {
@@ -98,10 +102,7 @@ html, body {
     color: white;
 }
 
-/* Hover Animation */
-.icon-link:hover {
-    transform: scale(1.1);
-}
+
 
 /* Responsive Video */
 .inline-video {
@@ -670,7 +671,7 @@ video, img {
 
 .inline-video {
     width: 100%;
-    max-width: 700px;     /* ✅ Limits video size */
+    max-width: 500px;     /* ✅ Limits video size */
     aspect-ratio: 16 / 9; /* ✅ Keeps consistent aspect ratio */
     height: auto;         /* ✅ Maintain aspect ratio */
     object-fit: cover;    /* ✅ Covers the space without stretching */
@@ -692,7 +693,7 @@ video, img {
 
 @media (max-width: 768px) {
     .feature-image, .inline-video {
-        max-width: 90%;  /* ✅ Use more width on smaller screens */
+        max-width: 100%;  /* ✅ Use more width on smaller screens */
     }
 }
 
@@ -743,11 +744,19 @@ video, img {
     display: block;
     margin: 0 auto;
 }
-
 @media (max-width: 768px) {
     .inline-video {
         width: 100vw; /* Full width on smaller devices */
         max-width: 100vw;
         border-radius: 0; /* Edge-to-edge for iPhone */
+    }
+}
+
+@media (max-width: 480px) {
+    .inline-video {
+        width: 100vw;
+        max-width: 100vw;
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 0; /* Full width with no border radius */
     }
 }
