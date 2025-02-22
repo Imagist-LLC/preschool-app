@@ -933,3 +933,33 @@ video {
         border-radius: 0 !important;
     }
 }
+
+/* Default spacing */
+.feature {
+    padding: 100px 5vw;    /* Large screens */
+    margin-bottom: 80px;   /* Space between sections */
+}
+
+/* Medium screens (Tablets) */
+@media (max-width: 1024px) {
+    .feature {
+        padding: 80px 4vw;
+        margin-bottom: 100px;  /* ✅ More space between sections */
+    }
+}
+
+/* Compact mode (Phones) */
+@media (max-width: 768px) {
+    .feature {
+        padding: 60px 4vw;
+        margin-bottom: 120px;  /* ✅ Even more space between sections */
+    }
+}
+
+/* Very small screens (iPhones, small devices) */
+@media (max-width: 480px) {
+    .feature {
+        padding: 50px 3.5vw;
+        margin-bottom: 140px;  /* ✅ Maximum space between sections */
+    }
+}
