@@ -1,70 +1,22 @@
-/* ============================
-    General Styling
-============================ */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!-- Clean-room rewrite: Optimized CSS and JS for responsive design -->
 
+/* ============================
+   General Styling
+============================ */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
+    margin: 0;
+    padding: 0;
     color: #fff;
     background-color: #000;
     line-height: 1.6;
-    width: 100%;
     overflow-x: hidden;
 }
 
 /* ============================
-    Hero Section
-============================ */
-.hero {
-    text-align: center;
-    padding: 100px 5vw;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: clamp(4rem, 8vw, 6.5rem);
-    font-weight: bold;
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-
-.hero .subtitle {
-    font-size: 1.8rem;
-    color: #bbb;
-    margin-bottom: 50px;
-}
-
-.icon-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #ff8c00, #ff4081);
-    transition: transform 0.3s ease;
-}
-
-.icon-link:hover .icon-container {
-    transform: scale(1.1);
-}
-
-.icon-label {
-    margin-top: 12px;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: white;
-}
-
-/* ============================
-    Responsive Video
+   Responsive Videos
 ============================ */
 .inline-video {
     width: 100%;
@@ -72,192 +24,105 @@ body {
     height: auto;
     aspect-ratio: 9 / 16;
     object-fit: cover;
-    border-radius: clamp(8px, 2vw, 24px);
     display: block;
     margin: 0 auto;
+    border-radius: clamp(8px, 2vw, 24px);
     overflow: hidden;
 }
 
 @media (max-width: 768px) {
     .inline-video {
         width: 100vw;
-        height: calc(100vw * 1.7);
+        max-width: 100vw;
+        height: calc(100vw * 1.77);
+        object-fit: contain;
         border-radius: 0;
     }
 }
 
 /* ============================
-    Features Section
+   SVG Icons
+============================ */
+.icon {
+    width: 64px;
+    height: 64px;
+    fill: currentColor;
+    color: #007aff;
+}
+
+/* ============================
+   Feature Sections
 ============================ */
 .feature {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5vw;
+    gap: 40px;
     max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 100px 5vw;
+    margin: 0 auto 100px auto;
+    padding: 80px 5vw;
 }
 
-.feature.reverse {
-    flex-direction: row-reverse;
-}
-
-.feature.centered {
-    text-align: center;
-    flex-direction: column;
-}
-
-.feature-text {
-    width: 45%;
-    max-width: 900px;
+.feature-text h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: white;
+    line-height: 1.2;
 }
 
 .feature-image {
-    width: 45%;
+    width: 100%;
     max-width: 500px;
     overflow: hidden;
     border-radius: clamp(8px, 2vw, 24px);
+}
+
+/* ============================
+   Quote Block Styling
+============================ */
+.quote-block {
+    text-align: center;
+    padding: 80px 5vw;
     margin: 0 auto;
+    max-width: 900px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-style: italic;
+    line-height: 1.3;
+    color: #fff;
 }
 
-.feature-image img {
-    width: 100%;
-    border-radius: inherit;
-    display: block;
-    object-fit: cover;
-}
+/* ============================
+   JavaScript for Video Posters
+============================ */
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        const lightPoster = video.querySelector('source[media="(prefers-color-scheme: light)"]').getAttribute('src');
+        const darkPoster = video.querySelector('source:not([media])').getAttribute('src');
+        const imgFallback = video.querySelector('img');
 
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            imgFallback.src = lightPoster.replace('.m4v', '.jpeg');
+        } else {
+            imgFallback.src = darkPoster.replace('.m4v', '.jpeg');
+        }
+    });
+});
+</script>
+
+/* ============================
+   Final Cleanup and Responsive Media Queries
+============================ */
 @media (max-width: 1024px) {
     .feature {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-        padding: 80px 4vw;
-        margin-bottom: 100px;
-    }
-
-    .feature-text, .feature-image {
-        width: 70%;
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-text, .feature-image {
-        width: 90%;
+        gap: 30px;
+        padding: 60px 4vw;
     }
 }
 
 @media (max-width: 480px) {
     .feature {
-        padding: 50px 3.5vw;
-        margin-bottom: 140px;
-    }
-
-    .feature-text, .feature-image {
-        width: 100%;
-    }
-}
-
-/* ============================
-    Call to Action
-============================ */
-.cta {
-    text-align: center;
-    padding: 80px 5vw;
-}
-
-.cta .button {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.cta .button:hover {
-    background-color: #bbb;
-    border-color: #555;
-}
-
-/* ============================
-    Quote Block Styling
-============================ */
-.quote-block {
-    text-align: center;
-    padding: 80px 5vw;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.quote-block blockquote {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-style: italic;
-    line-height: 1.3;
-    font-weight: 400;
-    color: #fff;
-}
-
-.quote-block blockquote::before,
-.quote-block blockquote::after {
-    font-size: clamp(6rem, 12vw, 10rem);
-    font-family: Georgia, serif;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.15);
-    position: absolute;
-    line-height: 1;
-    user-select: none;
-    pointer-events: none;
-}
-
-.quote-block blockquote::before {
-    content: "“";
-    top: -40px;
-    left: -20px;
-}
-
-.quote-block blockquote::after {
-    content: "”";
-    bottom: -40px;
-    right: -20px;
-}
-
-@media (max-width: 768px) {
-    .quote-block {
-        padding: 60px 3vw;
-    }
-
-    .quote-block blockquote {
-        font-size: clamp(1.8rem, 5vw, 2.8rem);
-    }
-}
-
-/* ✅ Light Mode */
-@media (prefers-color-scheme: light) {
-    body {
-        color: #555;
-        background-color: #fff;
-    }
-
-    .quote-block blockquote {
-        color: #000;
-    }
-
-    .quote-block blockquote::before,
-    .quote-block blockquote::after {
-        color: rgba(0, 0, 0, 0.1);
-    }
-}
-
-/* ✅ Dark Mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #bbb;
-        background-color: #000;
+        padding: 40px 3.5vw;
     }
 }
