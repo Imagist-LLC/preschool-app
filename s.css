@@ -424,3 +424,23 @@ a:hover {
     background: rgba(0, 0, 0, 0.1);
   }
 }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.theme-toggle svg {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .light-icon {
+  display: inline-block;
+}
+
+[data-theme="light"] .theme-toggle .dark-icon {
+  display: inline-block;
+}
