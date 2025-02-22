@@ -10,7 +10,6 @@ body {
     color: #fff;
     background-color: #000;
     line-height: 1.6;
-        transition: none; 
 
 }
 body {
@@ -23,7 +22,7 @@ body {
     max-width: 900px; /* Allow more room for text */
 }
 html, body {
-    overflow-x: clip; /* More modern, no layout shift */
+    overflow-x: hidden;  /* More reliable in Safari */
 }
 /* ============================
     Hero Section
