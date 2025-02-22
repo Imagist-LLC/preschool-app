@@ -10,20 +10,10 @@ body {
     color: #fff;
     background-color: #000;
     line-height: 1.6;
-
-}
-body {
-    max-width: none;  /* Remove any overall width limits */
-    width: 100%;      /* Use full width */
+    width: 100%;
+    overflow-x: hidden;  /* ✅ Prevent horizontal scrolling */
 }
 
-.feature-text {
-    width: 55%;  /* Increase text width from 45% to 55% */
-    max-width: 900px; /* Allow more room for text */
-}
-html, body {
-    overflow-x: hidden;  /* More reliable in Safari */
-}
 /* ============================
     Hero Section
 ============================ */
@@ -47,224 +37,17 @@ html, body {
     margin-bottom: 50px;
 }
 
-.icon {
-    width: 88px;
-    height: 88px;
-    fill: currentColor;
-    color: #007aff; /* Apple Blue */
-}
-
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-    .icon {
-        color: black;
-    }
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    .icon {
-        color: white;
-    }
-}
-
-/* Main Icon with Label */
-.icon-link {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin: 20px 30px;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.icon-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-   background: linear-gradient(135deg, #ff8c00, #ff4081); /* Mostly red gradient */
-    transition: all 0.3s ease;
-}
-
-.icon-label {
-    margin-top: 12px;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: white;
-}
-
-/* Hover Animation */
-.icon-link:hover {
-    transform: scale(1.1);
-}
-
-
-/* Responsive Video */
-.inline-video {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: clamp(8px, 2vw, 24px); /* Rounded corners */
-    overflow: hidden; /* Ensure rounded corners apply */
-}
-
-/* Ensure Posters are Responsive */
-.feature-image picture img {
-    width: 100%;
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    display: block;
-}
-
-video {
-    border-radius: clamp(8px, 2vw, 24px); /* Dynamic rounding */
-    overflow: hidden;
-    display: block;
-}
-
-video.inline-video {
-    border-radius: clamp(8px, 2vw, 24px) !important;
-    overflow: hidden !important;
-}
-/* ============================
-    Icon Layers
-============================ */
-.layer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    border-radius: 24px;
-    transition: transform 0.2s ease-out;
-}
-
-#layer1 {
-    background-image: url('images/back.png');
-}
-
-#layer2 {
-    background-image: url('images/middle.png');
-}
-
-#layer3 {
-    background-image: url('images/front.png');
-}
-
-@keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-}
-
-@keyframes bounce-effect-layer2 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-@keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-}
-
-.icon-container:hover #layer1 {
-    animation: bounce-effect-layer1 0.6s ease-out;
-}
-
-.icon-container:hover #layer2 {
-    animation: bounce-effect-layer2 0.6s ease-out;
-}
-
-.icon-container:hover #layer3 {
-    animation: bounce-effect-layer3 0.6s ease-out;
-}
-
 /* ============================
     Features Section
 ============================ */
-
-/* Default padding for larger screens */
-.feature, .hero, .cta {
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 100px 5vw;
-}
-
-/* Reduce side padding on smaller screens */
-@media (max-width: 768px) {
-    .feature, .hero, .cta {
-        padding: 40px 4vw;  /* Slightly less padding */
-    }
-}
-
-@media (max-width: 480px) {
-    .feature, .hero, .cta {
-        padding: 30px 3.5vw;  /* Even less padding for very small screens */
-    }
-}
-
-
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.feature.reverse {
-    flex-direction: row-reverse;
-}
-
-.feature.centered {
-    text-align: center;
-    flex-direction: column;
-}
-
-.feature-text {
-    width: 45%;
-}
-
-.feature-text h2 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: white;
-    line-height: 1.1; 
-}
-
-.feature-text p {
-    font-size: 1.3rem;
-    color: #bbb;
-}
-
-.feature-image {
-    width: 45%;
-}
-
-.feature-image img {
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-}
-
-/* ============================
-    Features Section
-============================ */
-
-/* Default Side-by-Side Layout */
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .feature.reverse {
@@ -279,36 +62,71 @@ video.inline-video {
 /* Text Section */
 .feature-text {
     width: 45%;
+    max-width: 600px;
     flex-shrink: 0;
 }
 
-/* Image Section */
-.feature-image {
-    width: 50%;
-    max-width: 700px;
-    position: relative;
+.feature-text h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 15px;
+    color: white;
+    line-height: 1.2;
 }
 
+.feature-text p {
+    font-size: 1.3rem;
+    color: #bbb;
+}
+
+/* Image and Video Section */
+.feature-image {
+    width: 50%;
+    max-width: 500px;       /* ✅ Limits size for iPhone-like scaling */
+    position: relative;
+    border-radius: clamp(8px, 2vw, 24px);
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Responsive Images */
 .feature-image img {
     width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    height: auto;
+    border-radius: inherit;
     object-fit: cover;
-    object-position: center;
+}
+
+/* Responsive Videos */
+.inline-video {
+    width: 100%;
+    max-width: 500px;    /* ✅ Limits video size (iPhone-sized on desktop) */
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: contain; /* ✅ Fits inside without cropping */
+    border-radius: inherit;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
-/* Responsive for Wide Screenshots */
+/* ✅ Hover Effect with Stronger Shadow */
+.feature-image:hover,
+.inline-video:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
+}
 
-/* ✅ 1. Stack Only Wide Images Earlier */
+/* ============================
+    Responsive Design
+============================ */
 @media (max-width: 1200px) {
     .feature-image img.wide {
-        display: block;
         width: 100%;
     }
 }
 
-/* ✅ 2. Stack Layout on Medium Screens (iPads, Tablets) */
 @media (max-width: 1024px) {
     .feature {
         flex-direction: column;
@@ -322,11 +140,10 @@ video.inline-video {
 
     .feature-text,
     .feature-image {
-        width: 90%;
+        width: 80%;
     }
 }
 
-/* ✅ 3. Stack Layout on Small Screens (Phones) */
 @media (max-width: 768px) {
     .feature-text,
     .feature-image {
@@ -334,34 +151,11 @@ video.inline-video {
     }
 }
 
-.feature-text h2 {
-    font-size: clamp(2.5rem, 4vw, 4rem); /* Slightly bigger headings */
-    max-width: 100%;  /* Allow headings to use full width */
-    margin-left: 0;   /* Reduce excessive margins */
-    margin-right: 0;
-    line-height: 1.2; /* Keep line-height tight */
-}
-
-
-@media (max-width: 1024px) {
-    .feature-text {
-        width: 70%;  /* Allow more width for tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-text {
-        width: 85%;  /* Allow even more width for mobile */
-    }
-}
-
-
 /* ============================
     Call to Action
 ============================ */
 .cta {
     text-align: center;
-
 }
 
 .cta .button {
@@ -371,58 +165,57 @@ video.inline-video {
     font-weight: bold;
     color: #000;
     background-color: #fff;
-    border: 2px solid #000; /* Added black border */
+    border: 2px solid #000;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .cta .button:hover {
     background-color: #bbb;
-    border-color: #555; /* Darker border on hover */
+    border-color: #555;
 }
 
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
     .cta .button {
         color: #fff;
         background-color: #000;
-        border: 2px solid #fff; /* White border in dark mode */
+        border: 2px solid #fff;
     }
-    
+
     .cta .button:hover {
         background-color: #444;
-        border-color: #ddd; /* Lighter border on hover */
+        border-color: #ddd;
     }
 }
+
 .cta .footer-caption {
     font-size: 1rem;
     color: #bbb;
     margin-top: 20px;
     opacity: 0.8;
 }
+
 /* ============================
     Link Styling 
 ============================ */
-
 a {
-    color: #007aff; 
-    text-decoration: none; /* No underline by default */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 a:visited {
-    color: #007aff; /* Same for visited links */
+    color: #007aff;
 }
 
 a:focus {
-    outline: none; /* No default outline */
-    border-bottom: 2px solid #007aff; /* Subtle focus indication */
+    outline: none;
+    border-bottom: 2px solid #007aff;
 }
 
 /* ============================
@@ -447,280 +240,85 @@ a:focus {
 }
 
 /* ============================
-    Responsive Design
+    Light/Dark Mode
 ============================ */
-@media (max-width: 1024px) {
-    .feature {
-        flex-direction: column;
-        text-align: center;
-        gap: 50px;
-    }
-
-    .feature.reverse {
-        flex-direction: column;
-    }
-
-    .feature-text,
-    .feature-image {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 80px 5vw;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero .subtitle {
-        font-size: 1.5rem;
-    }
-
-    .feature-text h2 {
-        font-size: 2.5rem;
-    }
-
-    .feature-text p {
-        font-size: 1.2rem;
-    }
-
-    .cta .button {
-        font-size: 1.3rem;
-    }
-
-    .cta .footer-caption {
-        font-size: 0.9rem;
-    }
-}
-
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
     body {
-        color: #bbb; /* Grey text for body */
+        color: #bbb;
         background-color: #000;
     }
 
     strong {
-        color: #fff; /* Pure white for <strong> */
-        font-weight: 500; /* Slightly thicker but not full bold */
-        letter-spacing: -0.02em; /* Consistency with light mode */
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: -0.02em;
     }
 }
 
 @media (prefers-color-scheme: light) {
-   /* Default Light Mode */
-body {
-    color: #555; /* Grey text for body */
-    background-color: #fff;
-}
-
-strong {
-    color: #000; /* Pure black for <strong> */
-    font-weight: 500; /* Slight weight increase without full bold */
-    letter-spacing: -0.02em; /* Subtle tightening of letters for Apple's look */
-}
-
-
-    .icon-label {
-        color: #000;
-    }
-
-    .feature-text h2 {
-        color: #000;
-    }
-
-    .feature-text p {
+    body {
         color: #555;
+        background-color: #fff;
     }
 
-    .cta .footer-caption {
-        color: #555;
-    }
-
-    .easter-egg {
+    strong {
         color: #000;
+        font-weight: 500;
+        letter-spacing: -0.02em;
     }
 }
-/* Unified Rounded Corners */
-.inline-video, video, .feature-image img {
-    border-radius: clamp(8px, 2vw, 24px);  /* Consistent corner radius */
-    overflow: hidden;                      /* Ensures content respects border radius */
-    display: block;
-    object-fit: cover;
-    object-position: center;
+
+/* ============================
+    Icon Layers (No Changes)
+============================ */
+.icon {
+    width: 88px;
+    height: 88px;
+    fill: currentColor;
+    color: #007aff;
 }
 
-/* Matching Shadows */
-.inline-video, video, .feature-image img {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Consistent shadow */
-    transition: all 0.3s ease;  /* Smooth hover effect */
-}
-
-/* Optional Hover Effect */
-.inline-video:hover, video:hover, .feature-image img:hover {
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow */
-}
-
-/* Light Mode */
 @media (prefers-color-scheme: light) {
-    .inline-video, video, .feature-image img {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    .icon {
+        color: black;
     }
 }
 
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
-    .inline-video, video, .feature-image img {
-        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08); /* Softer shadow in dark mode */
+    .icon {
+        color: white;
     }
 }
-/* Feature Image Container */
-.feature-image {
-    position: relative; 
-    width: 100%;
-    max-width: 700px;
-    overflow: hidden;                /* Clips both video and poster */
-    border-radius: clamp(8px, 2vw, 24px);
-    display: block;
-    flex-shrink: 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* ✅ Nice default shadow */
-    transition: all 0.3s ease;       /* ✅ Smooth hover effect */
-}
 
-/* Poster Frame */
-.video-poster {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit; /* ✅ Poster respects border-radius */
-    object-fit: cover;
-    z-index: 2; 
-    pointer-events: none;
-    display: block;
-    overflow: hidden;
-}
-
-/* Video */
-.inline-video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: inherit; /* ✅ Video respects border-radius */
-    display: block;
+.icon-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
     position: relative;
-    z-index: 1; 
-    overflow: hidden; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* ✅ Only Hide Poster When Video Starts */
-.inline-video:playing + .video-poster {
-    display: none;
-}
-
-/* ✅ Hover Effect with Stronger Shadow */
-.feature-image:hover {
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8); /* ✅ Bigger shadow on hover */
-}
-
-/* ✅ Responsive Adjustments */
-@media (max-width: 768px) {
-    .feature-image {
-        border-radius: clamp(8px, 2vw, 16px);
-    }
-}
-
-/* ✅ Light Mode Adjustments */
-@media (prefers-color-scheme: light) {
-    .feature-image {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* ✅ Softer shadow in light mode */
-    }
-
-    .feature-image:hover {
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* ✅ Stronger shadow on hover */
-    }
-}
-
-/* ✅ Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-    .feature-image {
-        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.08); /* ✅ Subtle white shadow in dark mode */
-    }
-
-    .feature-image:hover {
-        box-shadow: 0 12px 20px rgba(255, 255, 255, 0.15); /* ✅ Slightly stronger hover shadow */
-    }
-}
-
-/* ++++++ Video */
-.inline-video {
-    width: 100%;               /* ✅ Ensures video scales down */
-    max-width: 100%;           /* ✅ Prevents video from overflowing */
-    height: auto;              /* ✅ Maintain aspect ratio */
-    object-fit: cover;         /* ✅ Cover without stretching */
-    border-radius: clamp(8px, 2vw, 24px); 
+.icon-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 24px;
     overflow: hidden;
-    display: block;
-}
-.feature-image {
     position: relative;
-    width: 100%;
-    max-width: 700px;          /* ✅ Limits video width on large screens */
     margin: 0 auto;
-    overflow: hidden;          /* ✅ Clips overflow */
-    border-radius: clamp(8px, 2vw, 24px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-video, img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-.inline-video {
-    object-fit: contain;  /* ✅ Fit inside without cropping */
-}
-
-
-
-.inline-video {
-    width: 100%;
-    max-width: 700px;     /* ✅ Limits video size */
-    aspect-ratio: 16 / 9; /* ✅ Keeps consistent aspect ratio */
-    height: auto;         /* ✅ Maintain aspect ratio */
-    object-fit: cover;    /* ✅ Covers the space without stretching */
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;       /* ✅ Centers video horizontally */
-}
-
-.feature-image {
-    width: 100%;
-    max-width: 700px;       /* ✅ Limits container width */
-    margin: 0 auto;         /* ✅ Centers the container */
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .feature-image, .inline-video {
-        max-width: 90%;  /* ✅ Use more width on smaller screens */
-    }
+.icon-label {
+    margin-top: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
 }
 
-video, img {
-    width: 100%;           /* ✅ Responsive scaling */
-    max-width: 700px;      /* ✅ Limits maximum size */
-    height: auto;          /* ✅ Maintain aspect ratio */
-    display: block;        /* ✅ No extra space below */
-    border-radius: clamp(8px, 2vw, 24px);
-    object-fit: cover;
+.icon-link:hover {
+    transform: scale(1.1);
 }
