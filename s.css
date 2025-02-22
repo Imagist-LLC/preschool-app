@@ -141,8 +141,7 @@ strong {
 
 /* Icons and Layers */
 .icon-container {
-  width: 150px;
-  height: 150px;
+ 
   border-radius: 24px;
   position: relative;  /* ensure proper layering */
   z-index: 0;
@@ -152,6 +151,21 @@ strong {
   transition: transform 0.3s ease;
   overflow: visible;
 }
+
+ 
+  /* Increase the size of the main icon container */
+  .icon-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Bring the label closer and increase its size */
+  .icon-label {
+    font-size: 1.2rem;
+    margin-top: 4px;
+  }
+
+
 
 .icon-link {
   color: var(--heading-color);
@@ -179,7 +193,7 @@ strong {
 .icon-label {
   position: relative;
   z-index: 1;
-  margin-top: 10px;
+
 }
 
 @keyframes hoverBounce1 {
