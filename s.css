@@ -73,6 +73,7 @@ body {
   justify-content: center;
   gap: 48px;
   margin-bottom: 80px;
+  flex-wrap: wrap;  /* Allow wrapping and center items when they flow */
 }
 
 .feature.reverse {
@@ -133,7 +134,7 @@ strong {
   width: 100%;
   height: auto;
   aspect-ratio: 9/16;
-  object-fit: contain; /* Use contain to resize without clipping */
+  object-fit: contain;  /* Scale entire video into container */
   border-radius: clamp(8px, 2vw, 24px);
   box-shadow: var(--shadow-light);
 }
@@ -231,12 +232,13 @@ strong {
 }
 
 /* Inline Dark Mode Toggle Link */
-/* This link appears in the paragraph and should look like the surrounding strong text */
+/* The toggle is now just inline text styled like the surrounding strong text.
+   It is clickable and its title attribute indicates the action. */
 .theme-toggle {
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--heading-color);
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -362,7 +364,7 @@ a:hover {
   }
 }
 
-/* Landscape orientation: resize video to prevent clipping */
+/* Landscape orientation: resize video to fit without clipping */
 @media (orientation: landscape) {
   .inline-video {
     max-height: 80vh;
