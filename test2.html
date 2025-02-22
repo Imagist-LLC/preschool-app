@@ -18,9 +18,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://preschool.app/">
 
-    <link rel="preload" href="images/back.png" as="image">
-<link rel="preload" href="images/middle.png" as="image">
-<link rel="preload" href="images/front.png" as="image">
 </head>
 
 <body>
@@ -29,11 +26,49 @@
         <h1>Tiny Hands.<br>Big Minds.</h1>
 
 <a href="https://apps.apple.com/app/id6742157181" class="icon-link">
-    <div class="icon-container" data-icon="preschool" aria-label="App icon for Preschool.app">
-        <div class="layer layer1" aria-hidden="true"></div>
-        <div class="layer layer2" aria-hidden="true"></div>
-        <div class="layer layer3" aria-hidden="true"></div>
-    </div>
+   <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+    <style>
+        /* Keyframe bounce animation */
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Smooth transitions */
+        .layer {
+            transition: transform 0.4s ease, fill 0.4s ease;
+            transform-origin: center;
+        }
+
+        /* Hover effects */
+        svg:hover .layer1 {
+            animation: bounce 0.6s ease-out;
+        }
+        svg:hover .layer2 {
+            animation: bounce 0.6s ease-out 0.1s;
+        }
+        svg:hover .layer3 {
+            animation: bounce 0.6s ease-out 0.2s;
+        }
+    </style>
+
+    <!-- Red Rounded Background (Back Layer) -->
+    <path class="layer layer1" fill="#ff0b18" d="M 874 1024 C 956.8 1024 1024 956.8 1024 874 V150.4 C1024 67.6 956.8 0.4 874 0.4 H150 C67.2 0.4 0 67.6 0 150.4 V874 C0 956.8 67.2 1024 150 1024 Z"/>
+
+    <!-- Orange Gradient Middle Layer -->
+    <linearGradient id="gradient1" x1="196" y1="568" x2="828" y2="568" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 512 512)">
+        <stop offset="0" stop-color="#ff8500"/>
+        <stop offset="1" stop-color="#ffc900"/>
+    </linearGradient>
+    <path class="layer layer2" fill="url(#gradient1)" d="M752 884c82.8 0 150-67.2 150-150V402c0-82.8-67.2-150-150-150H272c-82.8 0-150 67.2-150 150v332c0 82.8 67.2 150 150 150h480Z"/>
+
+    <!-- Blue Gradient Front Layer -->
+    <linearGradient id="gradient2" x1="352" y1="630.5" x2="671" y2="630.5" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-90 512 512)">
+        <stop offset="0" stop-color="#007cff"/>
+        <stop offset="1" stop-color="#00bcff"/>
+    </linearGradient>
+    <path class="layer layer3" fill="url(#gradient2)" d="M722 790c41.4 0 75-33.6 75-75V546c0-41.4-33.6-75-75-75H301c-41.4 0-75 33.6-75 75v169c0 41.4 33.6 75 75 75h421Z"/>
+</svg>
     <div class="icon-label">Preschool.app</div>
 </a>
         
