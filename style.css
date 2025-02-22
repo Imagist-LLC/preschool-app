@@ -737,7 +737,7 @@ video, img {
     width: 100%;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
     object-fit: cover;
     border-radius: clamp(8px, 2vw, 24px);
     display: block;
