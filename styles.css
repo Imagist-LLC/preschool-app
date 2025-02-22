@@ -1,109 +1,231 @@
-<!-- Clean-room rewrite: Optimized CSS and JS for responsive design -->
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* ============================
-   General Styling
-============================ */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
-    margin: 0;
-    padding: 0;
     color: #fff;
     background-color: #000;
     line-height: 1.6;
+    width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* ============================
-   Responsive Videos
-============================ */
+/* Container Layout Fix */
+.feature, .hero, .cta {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 24px; /* Use fixed padding instead of vw */
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    width: 100%;
+}
+
+.hero .subtitle {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: #bbb;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* Feature Sections */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 80px;
+}
+
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    width: 45%;
+    flex-shrink: 0;
+}
+
+.feature-text h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.feature-text p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #bbb;
+    margin-bottom: 16px;
+}
+
+/* Video Container Fix */
+.feature-image {
+    width: 45%;
+    max-width: 500px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Allow shadow to show */
+}
+
+/* Video Element Fix */
 .inline-video {
     width: 100%;
-    max-width: 500px;
     height: auto;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 9/16;
     object-fit: cover;
-    display: block;
-    margin: 0 auto;
     border-radius: clamp(8px, 2vw, 24px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Icon and Label */
+.icon-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 24px;
     overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ff8c00, #ff4081);
+}
+
+.icon-label {
+    margin-top: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1024px) {
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 24px;
+    }
+
+    .feature.reverse {
+        flex-direction: column;
+    }
+
+    .feature-text,
+    .feature-image {
+        width: 100%;
+        max-width: 600px;
+    }
 }
 
 @media (max-width: 768px) {
+    .feature {
+        padding: 40px 16px;
+        margin-bottom: 60px;
+    }
+
+    /* Fix video container on mobile */
+    .feature-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fix video display on mobile */
     .inline-video {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        margin: 0;
+        left: 0;
+    }
+}
+
+/* iPhone Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+    .feature-image {
+        transform: translateX(0); /* Prevent Safari shifting */
         width: 100vw;
-        max-width: 100vw;
-        height: calc(100vw * 1.77);
-        object-fit: contain;
+        margin-left: -16px; /* Compensate for parent padding */
+    }
+
+    .inline-video {
+        width: 100%;
         border-radius: 0;
     }
 }
 
-/* ============================
-   SVG Icons
-============================ */
-.icon {
-    width: 64px;
-    height: 64px;
-    fill: currentColor;
-    color: #007aff;
-}
+/* Light/Dark Mode */
+@media (prefers-color-scheme: light) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
 
-/* ============================
-   Feature Sections
-============================ */
-.feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 100px auto;
-    padding: 80px 5vw;
-}
-
-.feature-text h2 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    color: white;
-    line-height: 1.2;
-}
-
-.feature-image {
-    width: 100%;
-    max-width: 500px;
-    overflow: hidden;
-    border-radius: clamp(8px, 2vw, 24px);
-}
-
-/* ============================
-   Quote Block Styling
-============================ */
-.quote-block {
-    text-align: center;
-    padding: 80px 5vw;
-    margin: 0 auto;
-    max-width: 900px;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-style: italic;
-    line-height: 1.3;
-    color: #fff;
-}
-
-
-/* ============================
-   Final Cleanup and Responsive Media Queries
-============================ */
-@media (max-width: 1024px) {
-    .feature {
-        gap: 30px;
-        padding: 60px 4vw;
+    .feature-text p {
+        color: #555;
     }
 }
 
-@media (max-width: 480px) {
-    .feature {
-        padding: 40px 3.5vw;
+/* Quote Block */
+.quote-block {
+    text-align: center;
+    padding: 60px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quote-block blockquote {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.3;
+    position: relative;
+    padding: 20px;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.cta .button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .cta .button {
+        color: #fff;
+        background-color: #000;
+        border-color: #fff;
     }
 }
