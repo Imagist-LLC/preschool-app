@@ -132,7 +132,7 @@ video.inline-video {
     overflow: hidden !important;
 }
 /* ============================
-    Icon Layers
+    Icon Layers - FIXED
 ============================ */
 .layer {
     width: 100%;
@@ -141,48 +141,36 @@ video.inline-video {
     top: 0;
     left: 0;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 24px;
     transition: transform 0.2s ease-out;
 }
 
-#layer1 {
+.layer1 {
     background-image: url('images/back.png');
 }
 
-#layer2 {
+.layer2 {
     background-image: url('images/middle.png');
 }
 
-#layer3 {
+.layer3 {
     background-image: url('images/front.png');
 }
 
-@keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-}
-
-@keyframes bounce-effect-layer2 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-@keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-}
-
-.icon-container:hover #layer1 {
+.icon-container:hover .layer1 {
     animation: bounce-effect-layer1 0.6s ease-out;
 }
 
-.icon-container:hover #layer2 {
+.icon-container:hover .layer2 {
     animation: bounce-effect-layer2 0.6s ease-out;
 }
 
-.icon-container:hover #layer3 {
+.icon-container:hover .layer3 {
     animation: bounce-effect-layer3 0.6s ease-out;
 }
+
 
 /* ============================
     Features Section
@@ -739,4 +727,27 @@ video, img {
     aspect-ratio: 9 / 16;
     overflow: hidden;
     border-radius: 24px;
+}
+
+
+/* ============================
+    Responsive Video - FIXED
+============================ */
+.inline-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: clamp(8px, 2vw, 24px);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .inline-video {
+        width: 100vw; /* Full width on smaller devices */
+        max-width: 100vw;
+        border-radius: 0; /* Edge-to-edge for iPhone */
+    }
 }
