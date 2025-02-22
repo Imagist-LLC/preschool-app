@@ -553,3 +553,51 @@ a:visited {
 }
 
 
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 16px;
+    background: transparent;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+    .theme-toggle:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Force dark mode */
+[data-theme="dark"] {
+    color: #bbb !important;
+    background-color: #000 !important;
+}
+
+[data-theme="dark"] strong {
+    color: #fff !important;
+}
+
+/* Force light mode */
+[data-theme="light"] {
+    color: #555 !important;
+    background-color: #fff !important;
+}
+
+[data-theme="light"] strong {
+    color: #000 !important;
+}
+
+
