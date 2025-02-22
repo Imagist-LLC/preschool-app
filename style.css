@@ -98,16 +98,16 @@ body {
     object-fit: cover;
 }
 
+
 /* Responsive Videos */
 .inline-video {
     width: 100%;
     max-width: 500px;    /* ✅ Limits video size (iPhone-sized on desktop) */
-    aspect-ratio: 16 / 9;
-    height: auto;
+    height: auto;        /* ✅ Maintains native portrait ratio */
     object-fit: contain; /* ✅ Fits inside without cropping */
-    border-radius: inherit;
+    border-radius: clamp(8px, 2vw, 24px);
     display: block;
-    margin: 0 auto;
+    margin: 0 auto;      /* ✅ Centers video */
     overflow: hidden;
     transition: all 0.3s ease;
 }
