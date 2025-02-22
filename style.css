@@ -828,3 +828,39 @@ video, img {
         border-radius: 0;
     }
 }
+
+/* ============================
+    Portrait Video Fix - iPhone
+============================ */
+.inline-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16; /* Portrait by default */
+    object-fit: cover;
+    border-radius: clamp(8px, 2vw, 24px);
+    display: block;
+    margin: 0 auto;
+}
+
+/* iPhone-specific tweak: Allow video to scale without strict height */
+@media (max-width: 768px) {
+    .inline-video {
+        width: 100vw;        /* Full width */
+        max-width: 100vw;
+        height: auto;        /* Let the height auto-adjust */
+        aspect-ratio: auto;  /* Allow natural portrait ratio */
+        border-radius: 0;    /* Edge-to-edge for iPhone */
+    }
+}
+
+/* Extra small devices (like iPhone SE) */
+@media (max-width: 480px) {
+    .inline-video {
+        width: 100vw;
+        max-width: 100vw;
+        height: auto;        /* Prevents narrow tall look */
+        aspect-ratio: auto;  /* Allow portrait scaling */
+        border-radius: 0;
+    }
+}
