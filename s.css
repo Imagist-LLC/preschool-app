@@ -143,7 +143,8 @@ strong {
   width: 150px;
   height: 150px;
   border-radius: 24px;
-  position: relative;
+  position: relative;  /* ensure proper layering */
+  z-index: 0;
   margin: 0 auto;
   padding: 20px;
   background: transparent;
@@ -171,6 +172,62 @@ strong {
 .icon {
   width: 88px;
   height: 88px;
+}
+
+/* Place the icon label above the bouncing layers */
+.icon-label {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+/* Bounce Animations */
+@keyframes bounce-effect-layer1 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes bounce-effect-layer2 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+@keyframes bounce-effect-layer3 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 24px;
+  transition: transform 0.2s ease-out;
+  transform-origin: center;
+  will-change: transform;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  z-index: 0; /* ensure layers are behind the label */
+}
+
+.icon-container:hover .layer1 {
+  animation: bounce-effect-layer1 0.6s ease-out;
+}
+
+.icon-container:hover .layer2 {
+  animation: bounce-effect-layer2 0.6s ease-out 0.1s;
+}
+
+.icon-container:hover .layer3 {
+  animation: bounce-effect-layer3 0.6s ease-out 0.2s;
+}
+
+.icon-container svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
 /* Theme Toggle Button (Icon Only) - no chrome */
@@ -362,4 +419,47 @@ a:hover {
   .theme-toggle:hover {
     background: rgba(0, 0, 0, 0.1);
   }
+}
+
+/* Bounce Animations */
+@keyframes bounce-effect-layer1 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes bounce-effect-layer2 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes bounce-effect-layer3 {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 24px;
+  transition: transform 0.2s ease-out;
+  transform-origin: center;
+  will-change: transform;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  z-index: 0;
+}
+
+.icon-container:hover .layer1 {
+  animation: bounce-effect-layer1 0.6s ease-out;
+}
+
+.icon-container:hover .layer2 {
+  animation: bounce-effect-layer2 0.6s ease-out 0.1s;
+}
+
+.icon-container:hover .layer3 {
+  animation: bounce-effect-layer3 0.6s ease-out 0.2s;
 }
