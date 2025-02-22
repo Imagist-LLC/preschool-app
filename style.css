@@ -686,3 +686,41 @@ video, img {
     object-fit: contain;  /* ✅ Fit inside without cropping */
 }
 
+
+
+.inline-video {
+    width: 100%;
+    max-width: 700px;     /* ✅ Limits video size */
+    aspect-ratio: 16 / 9; /* ✅ Keeps consistent aspect ratio */
+    height: auto;         /* ✅ Maintain aspect ratio */
+    object-fit: cover;    /* ✅ Covers the space without stretching */
+    border-radius: clamp(8px, 2vw, 24px);
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;       /* ✅ Centers video horizontally */
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 700px;       /* ✅ Limits container width */
+    margin: 0 auto;         /* ✅ Centers the container */
+    border-radius: clamp(8px, 2vw, 24px);
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .feature-image, .inline-video {
+        max-width: 90%;  /* ✅ Use more width on smaller screens */
+    }
+}
+
+video, img {
+    width: 100%;           /* ✅ Responsive scaling */
+    max-width: 700px;      /* ✅ Limits maximum size */
+    height: auto;          /* ✅ Maintain aspect ratio */
+    display: block;        /* ✅ No extra space below */
+    border-radius: clamp(8px, 2vw, 24px);
+    object-fit: cover;
+}
