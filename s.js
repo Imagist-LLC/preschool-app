@@ -82,3 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // ... your existing code ...
+
+  // Remove the 'initial' class from all layers after the fade-in animation finishes (e.g., 600ms)
+  setTimeout(function() {
+    document.querySelectorAll('.layer.initial').forEach(function(layer) {
+      layer.classList.remove('initial');
+    });
+  }, 600);
+});
