@@ -17,16 +17,19 @@ body {
 /* ============================
     Icon Layers
 ============================ */
+/* Icon Container */
 .icon-container {
     width: 150px;
     height: 150px;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
+    margin: 0 auto;
     background: linear-gradient(135deg, #ff8c00, #ff4081);
     transition: all 0.3s ease;
 }
 
+/* Individual Layers */
 .layer {
     width: 100%;
     height: 100%;
@@ -36,20 +39,53 @@ body {
     background-size: cover;
     border-radius: 24px;
     transition: transform 0.2s ease-out;
+    opacity: 1;
+    visibility: visible;
+    will-change: transform, opacity;
 }
 
-#layer1 { background-image: url('images/back.png'); }
-#layer2 { background-image: url('images/middle.png'); }
-#layer3 { background-image: url('images/front.png'); }
+/* ✅ Correct Paths */
+.layer1 {
+    background-image: url('images/back.png');
+}
 
-.icon-container:hover #layer1 { animation: bounce-effect-layer1 0.6s ease-out; }
-.icon-container:hover #layer2 { animation: bounce-effect-layer2 0.6s ease-out; }
-.icon-container:hover #layer3 { animation: bounce-effect-layer3 0.6s ease-out; }
+.layer2 {
+    background-image: url('images/middle.png');
+}
 
-@keyframes bounce-effect-layer1 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
-@keyframes bounce-effect-layer2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-@keyframes bounce-effect-layer3 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.layer3 {
+    background-image: url('images/front.png');
+}
 
+/* Hover Animation */
+@keyframes bounce-effect-layer1 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes bounce-effect-layer2 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce-effect-layer3 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); }
+}
+
+.icon-container:hover .layer1 {
+    animation: bounce-effect-layer1 0.4s ease-out;
+}
+
+.icon-container:hover .layer2 {
+    animation: bounce-effect-layer2 0.4s ease-out;
+    animation-delay: 0.05s;
+}
+
+.icon-container:hover .layer3 {
+    animation: bounce-effect-layer3 0.4s ease-out;
+    animation-delay: 0.1s;
+}
 /* ============================
     Videos
 ============================ */
