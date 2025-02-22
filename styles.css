@@ -505,6 +505,51 @@ a:visited {
 
 
 
+.layer {
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
 
+@keyframes bounce-effect-layer1 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce-effect-layer2 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes bounce-effect-layer3 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.icon-container:hover .layer1 {
+    animation: bounce-effect-layer1 0.6s ease-out;
+}
+
+.icon-container:hover .layer2 {
+    animation: bounce-effect-layer2 0.6s ease-out 0.1s;
+}
+
+.icon-container:hover .layer3 {
+    animation: bounce-effect-layer3 0.6s ease-out 0.2s;
+}
+
+/* Light mode shadow adjustment */
+@media (prefers-color-scheme: light) {
+    .layer {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    }
+}
+
+/* Dark mode shadow adjustment */
+@media (prefers-color-scheme: dark) {
+    .layer {
+        filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.08));
+    }
+}
 
 
