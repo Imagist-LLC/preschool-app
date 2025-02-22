@@ -10,54 +10,31 @@ body {
     color: #fff;
     background-color: #000;
     line-height: 1.6;
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* ============================
-    Features Section
+    Hero Section
 ============================ */
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    max-width: 1200px;
+.hero {
+    text-align: center;
+    padding: 100px 5vw;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.feature.reverse {
-    flex-direction: row-reverse;
+.hero h1 {
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.feature.centered {
-    text-align: center;
-    flex-direction: column;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .feature {
-        gap: 4vw;
-    }
-}
-
-@media (max-width: 1024px) {
-    .feature {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .feature-text, .feature-image {
-        width: 85%;
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-text, .feature-image {
-        width: 95%;
-    }
+.hero .subtitle {
+    font-size: 1.8rem;
+    color: #bbb;
+    margin-bottom: 50px;
 }
 
 /* ============================
@@ -85,58 +62,137 @@ body {
     transition: transform 0.2s ease-out;
 }
 
-.layer1 { background-image: url('images/back.png'); }
-.layer2 { background-image: url('images/middle.png'); }
-.layer3 { background-image: url('images/front.png'); }
-
-@keyframes bounce-effect-layer1 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+.layer1 {
+    background-image: url('images/back.png');
 }
 
-@keyframes bounce-effect-layer2 {
+.layer2 {
+    background-image: url('images/middle.png');
+}
+
+.layer3 {
+    background-image: url('images/front.png');
+}
+
+@keyframes bounce-effect {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
 
-@keyframes bounce-effect-layer3 {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-}
-
-.icon-container:hover .layer1 {
-    animation: bounce-effect-layer1 0.6s ease-out;
-}
-
-.icon-container:hover .layer2 {
-    animation: bounce-effect-layer2 0.6s ease-out;
-    animation-delay: 0.05s;
-}
-
-.icon-container:hover .layer3 {
-    animation: bounce-effect-layer3 0.6s ease-out;
-    animation-delay: 0.1s;
+.icon-container:hover .layer {
+    animation: bounce-effect 0.6s ease-out;
 }
 
 /* ============================
-    Easter Egg
+    Features Section
 ============================ */
-.easter-egg {
-    font-size: 0.8rem;
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    transition: opacity 0.3s ease;
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 5vw;
 }
 
-.easter-egg:hover {
-    opacity: 0.7;
-    pointer-events: auto;
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature.centered {
+    text-align: center;
+    flex-direction: column;
+}
+
+.feature-text {
+    width: 45%;
+}
+
+.feature-text h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: white;
+    line-height: 1.1;
+}
+
+.feature-text p {
+    font-size: 1.3rem;
+    color: #bbb;
+}
+
+.feature-image {
+    width: 50%;
+    max-width: 700px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.feature-image img, .inline-video {
+    width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.inline-video {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .feature-text, .feature-image {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-text, .feature-image {
+        width: 100%;
+    }
+}
+
+/* ============================
+    Call to Action
+============================ */
+.cta {
+    text-align: center;
+    padding: 80px 5vw;
+}
+
+.cta .button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta .button:hover {
+    background-color: #bbb;
+}
+
+.cta .footer-caption {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 20px;
+    opacity: 0.8;
 }
 
 /* ============================
@@ -162,39 +218,46 @@ a:focus {
 }
 
 /* ============================
-    Responsive Video
+    Easter Egg
 ============================ */
-.inline-video {
+.easter-egg {
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: contain;
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s ease;
 }
 
-.feature-image {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: clamp(8px, 2vw, 24px);
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+.easter-egg:hover {
+    opacity: 0.7;
 }
 
 /* ============================
-    Dark and Light Mode
+    Dark & Light Mode
 ============================ */
 @media (prefers-color-scheme: dark) {
-    body { color: #bbb; background-color: #000; }
-    strong { color: #fff; }
+    body {
+        color: #bbb;
+        background-color: #000;
+    }
+
+    strong {
+        color: #fff;
+    }
 }
 
 @media (prefers-color-scheme: light) {
-    body { color: #555; background-color: #fff; }
-    strong { color: #000; }
+    body {
+        color: #555;
+        background-color: #fff;
+    }
+
+    strong {
+        color: #000;
+    }
 }
