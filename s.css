@@ -168,9 +168,9 @@ strong {
   fill: currentColor;
 }
 
-/* Make the lightbulb icon (toggle) brighter */
+/* Make the lightbulb icon (toggle) brighter 
 .theme-toggle .light-icon {
-  color: #ffeb3b; /* Bright yellow */
+  color: #ffeb3b; Bright yellow */
 }
 
 /* Bounce Animations */
