@@ -196,6 +196,18 @@ strong {
 
 }
 
+
+.icon-container:hover .layer1 {
+  animation: hoverBounce1 0.6s ease-out forwards;
+}
+.icon-container:hover .layer2 {
+  animation: hoverBounce2 0.6s ease-out 0.1s forwards;
+}
+.icon-container:hover .layer3 {
+  animation: hoverBounce3 0.6s ease-out 0.2s forwards;
+}
+
+
 @keyframes hoverBounce1 {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.05); opacity: 1; }
@@ -229,15 +241,6 @@ strong {
   z-index: 0;
 }
 
-.icon-container:hover .layer1 {
-  animation: hoverBounce1 0.6s ease-out forwards;
-}
-.icon-container:hover .layer2 {
-  animation: hoverBounce2 0.6s ease-out 0.1s forwards;
-}
-.icon-container:hover .layer3 {
-  animation: hoverBounce3 0.6s ease-out 0.2s forwards;
-}
 
 .icon-container svg {
   width: 100%;
