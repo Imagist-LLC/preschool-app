@@ -36,10 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function shouldUseDark() {
-        if (currentTheme === 'system') {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }
-        return currentTheme === 'dark';
+        return currentTheme === 'system'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            : currentTheme === 'dark';
     }
 
     // Toggle theme manually
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateVideoSources(shouldUseDark());
     }
 
-    // Expose toggleTheme to the global scope for HTML onclick usage
+    // Expose toggleTheme globally for HTML onclick usage
     window.toggleTheme = toggleTheme;
 
     // Initial update based on current theme preference
