@@ -182,18 +182,20 @@ strong {
   margin-top: 10px;
 }
 
-/* Bounce Animations with subtle scale */
-@keyframes bounce-effect-layer1 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@keyframes hoverBounce1 {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
-@keyframes bounce-effect-layer2 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+@keyframes hoverBounce2 {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
-@keyframes bounce-effect-layer3 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+@keyframes hoverBounce3 {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .layer {
@@ -214,15 +216,13 @@ strong {
 }
 
 .icon-container:hover .layer1 {
-  animation: bounce-effect-layer1 0.6s ease-out;
+  animation: hoverBounce1 0.6s ease-out forwards;
 }
-
 .icon-container:hover .layer2 {
-  animation: bounce-effect-layer2 0.6s ease-out 0.1s;
+  animation: hoverBounce2 0.6s ease-out 0.1s forwards;
 }
-
 .icon-container:hover .layer3 {
-  animation: bounce-effect-layer3 0.6s ease-out 0.2s;
+  animation: hoverBounce3 0.6s ease-out 0.2s forwards;
 }
 
 .icon-container svg {
