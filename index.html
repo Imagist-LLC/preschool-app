@@ -81,25 +81,21 @@
     </div>
 
     <figure class="feature-image">
-        <video class="inline-video" 
-            playsinline 
-            autoplay 
-            muted 
-            loop 
-            poster="images/shapes.jpeg">
-            <!-- Light Mode Video -->
-            <source src="images/shapes-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+    <picture class="video-poster">
+        <source srcset="images/shapes-light.jpeg" media="(prefers-color-scheme: light)">
+        <img src="images/shapes.jpeg" alt="Shapes learning module">
+    </picture>
 
-            <!-- Dark Mode Video (Default) -->
-            <source src="images/shapes.m4v" type="video/mp4">
-        </video>
-
-        <!-- Light/Dark Mode Image Fallback -->
-        <picture>
-            <source srcset="images/shapes-light.jpeg" media="(prefers-color-scheme: light)">
-            <img src="images/shapes.jpeg" alt="Shape learning module">
-        </picture>
-    </figure>
+    <video class="inline-video"
+        playsinline
+        autoplay
+        muted
+        loop
+    >
+        <source src="images/shapes-light.m4v" type="video/mp4" media="(prefers-color-scheme: light)">
+        <source src="images/shapes.m4v" type="video/mp4">
+    </video>
+</figure>
 </section>
 
 <section class="feature reverse">
