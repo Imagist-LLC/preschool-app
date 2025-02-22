@@ -7,70 +7,71 @@
   <title>Preschool.app</title>
   <meta name="description" content="Preschool.app – A beautifully designed learning app for ages 1-5 with shapes, colors, and letters. Built by discerning parents, made for discerning children.">
  <style>
-   /* Main Icon Load Animation: layers animate in sequentially */
-.layer {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: layerFadeIn 0.5s forwards;
-}
-
-.layer.layer1 {
-  animation-delay: 0s;
-}
-.layer.layer2 {
-  animation-delay: 0.3s;
-}
-.layer.layer3 {
-  animation-delay: 0.6s;
-}
-
-@keyframes layerFadeIn {
-  from {
+  /* Main Icon Load Animation: layers animate in sequentially */
+  .layer {
     opacity: 0;
     transform: scale(0.95);
+    animation: layerFadeIn 0.5s forwards;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  
+  .layer.layer1 {
+    animation-delay: 0s;
   }
-}
-
-/* Increase the size of the main icon */
-.icon-container {
-  width: 200px;  /* increased from 150px */
-  height: 200px;
-}
-
-/* Bring the label closer and increase its size */
-.icon-label {
-  font-size: 1.2rem;
-  margin-top: 8px;
-}
-
-/* Smooth Hover Effect on layers */
-.icon-container:hover .layer1 {
-  animation: hoverBounce1 0.6s ease-out;
-}
-.icon-container:hover .layer2 {
-  animation: hoverBounce2 0.6s ease-out 0.1s;
-}
-.icon-container:hover .layer3 {
-  animation: hoverBounce3 0.6s ease-out 0.2s;
-}
-
-@keyframes hoverBounce1 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-@keyframes hoverBounce2 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
-@keyframes hoverBounce3 {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
- </style>
+  .layer.layer2 {
+    animation-delay: 0.3s;
+  }
+  .layer.layer3 {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes layerFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Increase the size of the main icon container */
+  .icon-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Bring the label closer and increase its size */
+  .icon-label {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+  
+  /* Hover Bounce Animations (maintaining full opacity) */
+  @keyframes hoverBounce1 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+  @keyframes hoverBounce2 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 1; }
+  }
+  @keyframes hoverBounce3 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  
+  /* Apply hover animations to layers */
+  .icon-container:hover .layer1 {
+    animation: hoverBounce1 0.6s ease-out;
+  }
+  .icon-container:hover .layer2 {
+    animation: hoverBounce2 0.6s ease-out 0.1s;
+  }
+  .icon-container:hover .layer3 {
+    animation: hoverBounce3 0.6s ease-out 0.2s;
+  }
+</style>
   
   <link rel="stylesheet" href="s.css">
   <meta name="apple-itunes-app" content="app-id=6742157181">
@@ -89,31 +90,31 @@
 <body>
   <!-- Hero Section -->
   <header class="hero">
-    <h1>Tiny Hands.<br>Big Minds.</h1>
-    <a href="https://apps.apple.com/app/id6742157181" class="icon-link">
-      <div class="icon-container">
-        <?xml version="1.0" encoding="UTF-8"?>
-        <svg width="200" height="200" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-          <!-- Back Layer -->
-          <path id="back-copy" class="layer layer1" fill="#ff0b18" fill-rule="evenodd" stroke="none" opacity="0.893514" d="M 874 1024 C 956.842712 1024 1024 956.842712 1024 874 L 1024 150.398926 C 1024 67.556213 956.842712 0.398926 874 0.398926 L 150 0.398926 C 67.157288 0.398926 -0 67.556213 -0 150.398926 L 0 874 C 0 956.842712 67.157288 1024 150 1024 Z"/>
-          <!-- Middle Layer -->
-          <linearGradient id="gradient1" x1="196" y1="568" x2="828" y2="568" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 -1 1 0 -56 1080)">
-            <stop offset="0" stop-color="#ff8500" stop-opacity="1"/>
-            <stop offset="1" stop-color="#ffc900" stop-opacity="1"/>
-          </linearGradient>
-          <path id="middle-copy" class="layer layer2" fill="url(#gradient1)" fill-rule="evenodd" stroke="none" d="M 752 884 C 834.842712 884 902 816.842712 902 734 L 902 402 C 902 319.157288 834.842712 252 752 252 L 272 252 C 189.157288 252 122 319.157288 122 402 L 122 734 C 122 816.842712 189.157288 884 272 884 Z"/>
-          <!-- Front Layer -->
-          <linearGradient id="gradient2" x1="352" y1="630.5" x2="671" y2="630.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 -1 1 0 -119 1142)">
-            <stop offset="0" stop-color="#007cff" stop-opacity="1"/>
-            <stop offset="1" stop-color="#00bcff" stop-opacity="1"/>
-          </linearGradient>
-          <path id="front-copy" class="layer layer3" fill="url(#gradient2)" fill-rule="evenodd" stroke="none" d="M 722 790 C 763.421387 790 797 756.421387 797 715 L 797 546 C 797 504.578674 763.421387 471 722 471 L 301 471 C 259.578613 471 226 504.578674 226 546 L 226 715 C 226 756.421387 259.578613 790 301 790 Z"/>
-        </svg>
-      </div>
-      <div class="icon-label">Preschool.app</div>
-    </a>
-    <p class="subtitle">A thoughtfully crafted app for young learners.</p>
-  </header>
+  <h1>Tiny Hands.<br>Big Minds.</h1>
+  <a href="https://apps.apple.com/app/id6742157181" class="icon-link">
+    <div class="icon-container">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg width="200" height="200" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+        <!-- Back Layer -->
+        <path id="back-copy" class="layer layer1" fill="#ff0b18" fill-rule="evenodd" stroke="none" opacity="0.893514" d="M 874 1024 C 956.842712 1024 1024 956.842712 1024 874 L 1024 150.398926 C 1024 67.556213 956.842712 0.398926 874 0.398926 L 150 0.398926 C 67.157288 0.398926 -0 67.556213 -0 150.398926 L 0 874 C 0 956.842712 67.157288 1024 150 1024 Z"/>
+        <!-- Middle Layer -->
+        <linearGradient id="gradient1" x1="196" y1="568" x2="828" y2="568" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 -1 1 0 -56 1080)">
+          <stop offset="0" stop-color="#ff8500" stop-opacity="1"/>
+          <stop offset="1" stop-color="#ffc900" stop-opacity="1"/>
+        </linearGradient>
+        <path id="middle-copy" class="layer layer2" fill="url(#gradient1)" fill-rule="evenodd" stroke="none" d="M 752 884 C 834.842712 884 902 816.842712 902 734 L 902 402 C 902 319.157288 834.842712 252 752 252 L 272 252 C 189.157288 252 122 319.157288 122 402 L 122 734 C 122 816.842712 189.157288 884 272 884 Z"/>
+        <!-- Front Layer -->
+        <linearGradient id="gradient2" x1="352" y1="630.5" x2="671" y2="630.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 -1 1 0 -119 1142)">
+          <stop offset="0" stop-color="#007cff" stop-opacity="1"/>
+          <stop offset="1" stop-color="#00bcff" stop-opacity="1"/>
+        </linearGradient>
+        <path id="front-copy" class="layer layer3" fill="url(#gradient2)" fill-rule="evenodd" stroke="none" d="M 722 790 C 763.421387 790 797 756.421387 797 715 L 797 546 C 797 504.578674 763.421387 471 722 471 L 301 471 C 259.578613 471 226 504.578674 226 546 L 226 715 C 226 756.421387 259.578613 790 301 790 Z"/>
+      </svg>
+    </div>
+    <div class="icon-label">Preschool.app</div>
+  </a>
+  <p class="subtitle">A thoughtfully crafted app for young learners.</p>
+</header>
 
   <main>
     <!-- Easy on the Eyes Section -->
