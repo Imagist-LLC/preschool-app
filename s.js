@@ -51,6 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         document.documentElement.setAttribute('data-theme', currentTheme);
         updateVideoSources(shouldUseDark());
+
+        const toggleButton = document.querySelector('.theme-toggle');
+        if (currentTheme === 'dark') {
+            toggleButton.setAttribute('title', 'Switch to light mode');
+        } else {
+            toggleButton.setAttribute('title', 'Switch to dark mode');
+        }
     }
 
     // Expose toggleTheme globally for HTML onclick usage
@@ -58,13 +65,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial update based on current theme preference
     updateVideoSources(shouldUseDark());
-    // Set initial data-theme attribute so the toggle button shows only one icon
     document.documentElement.setAttribute('data-theme', shouldUseDark() ? 'dark' : 'light');
+    const toggleButton = document.querySelector('.theme-toggle');
+    if (shouldUseDark()) {
+        toggleButton.setAttribute('title', 'Switch to light mode');
+    } else {
+        toggleButton.setAttribute('title', 'Switch to dark mode');
+    }
 
     // Listen for system color scheme changes if in 'system' mode
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkModeMediaQuery.addEventListener('change', (e) => {
         if (currentTheme === 'system') {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
             updateVideoSources(e.matches);
         }
     });
