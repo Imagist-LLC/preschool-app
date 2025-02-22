@@ -919,3 +919,17 @@ video {
         left: 0;  /* ✅ Fully centered */
     }
 }
+
+.inline-video {
+    aspect-ratio: 9 / 16 !important;  /* Keep portrait ratio */
+    object-fit: cover !important;      /* Clip slightly vertically */
+    margin: 0 auto !important;
+}
+
+@media (max-width: 480px) {
+    .feature-image, .inline-video {
+        width: 100vw !important;
+        height: calc(100vw * 1.6) !important;  /* ✅ Slight vertical clipping */
+        border-radius: 0 !important;
+    }
+}
