@@ -555,10 +555,6 @@ ul li {
     color: #555;
 }
 
-ul li strong {
-    font-weight: 600;
-    color: #333;
-}
 
 /* Custom Icons for List Items */
 .roadmap-list li::before {
