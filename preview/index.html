@@ -11,6 +11,188 @@
     <meta property="og:image" content="/icon.png">
     <meta property="og:site_name" content="Preschool.app">
     <link rel="stylesheet" href="/s.css">
+        <style>
+
+        /* Preview Page Enhancements - Append to existing CSS */
+
+/* Main container styling to match the main page feel */
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styling to match hero section */
+h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: var(--heading-color);
+  text-align: center;
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: var(--text-color);
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Improve section styling to match feature sections */
+.preview-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 40px;
+  border-radius: clamp(8px, 2vw, 24px);
+  padding: 32px;
+  background: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* In light mode, adjust section styling */
+[data-theme="light"] .preview-section {
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: var(--shadow-light);
+}
+
+.preview-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headers */
+.preview-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Section content */
+.preview-section p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--text-color);
+  margin-bottom: 24px;
+}
+
+/* Button styling to match CTA */
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: bold;
+  color: var(--bg-color);
+  background-color: var(--heading-color);
+  border: 2px solid var(--heading-color);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--text-color);
+  border-color: #ddd;
+  text-decoration: none;
+}
+
+/* List styling improvements */
+.roadmap-list li, .feature-list li {
+  margin-bottom: 16px;
+  padding-left: 28px;
+  position: relative;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-color);
+}
+
+.roadmap-list li::before, .feature-list li::before {
+  content: "•";
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.roadmap-list li strong, .feature-list li strong {
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+/* Bottom pre-order stamp styling */
+.bottom-preorder-stamp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.bottom-preorder-stamp:hover {
+  transform: scale(1.05);
+}
+
+.bottom-preorder-svg {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Easter egg improvement */
+.easter-egg {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.3;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.easter-egg:hover {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main {
+    padding: 60px 20px 40px;
+  }
+  
+  .preview-section {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .btn-primary {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .bottom-preorder-stamp {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .bottom-preorder-svg {
+    width: 150px;
+  }
+}
+        </style>
 </head>
 
 <body>
