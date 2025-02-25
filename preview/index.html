@@ -192,6 +192,70 @@ h1 {
     width: 150px;
   }
 }
+
+/* Larger emoji styling */
+.preview-section h2 i {
+  font-size: 1.5em;
+  display: inline-block; 
+  vertical-align: middle;
+  margin-right: 0.15em;
+  line-height: 1;
+  font-style: normal; /* Removes italic styling */
+}
+
+/* Improved sticky download button behavior */
+.bottom-preorder-stamp {
+  position: sticky;
+  bottom: -100px; /* Start hidden below the viewport */
+  right: 30px;
+  margin-left: auto; /* Align to right side */
+  z-index: 10;
+  transition: all 0.3s ease;
+  float: right; /* Keep it to the right */
+  margin-right: 30px; /* Spacing from edge */
+  /* This is the magic part - appear only after scrolling down */
+  transform: translateY(0);
+  opacity: 0;
+}
+
+/* Make it appear after scrolling using the scroll-driven animation API */
+@media (min-height: 700px) {
+  html {
+    scroll-timeline: --page-scroll block;
+  }
+  
+  .bottom-preorder-stamp {
+    animation: appear-on-scroll linear;
+    animation-timeline: --page-scroll;
+    animation-range: 400px 600px; /* Adjust these values based on when you want it to appear */
+  }
+  
+  @keyframes appear-on-scroll {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Fallback for browsers that don't support scroll-driven animations */
+@supports not (animation-timeline: scroll()) {
+  .main {
+    padding-bottom: 120px; /* Add extra space at bottom */
+  }
+  
+  .bottom-preorder-stamp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
         </style>
 </head>
 
