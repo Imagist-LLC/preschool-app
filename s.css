@@ -280,16 +280,10 @@ strong {
   font-size: clamp(6rem, 12vw, 10rem);
   font-family: Georgia, serif;
   position: absolute;
-  color: rgba(255, 255, 255, 0.3); /* Soft white */
+  color: rgba(255, 255, 255, 0.15);
   line-height: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  .quote-block blockquote::after {
-    color: rgba(0, 0, 0, 0.3); /* Soft black for light mode */
-  }
-
-  
 .quote-block blockquote::before {
   content: "\201C"; /* Left double quotation mark */
   top: -40px;
@@ -571,5 +565,4 @@ ul li {
     left: 0;
     top: 2px;
 }
-
 
