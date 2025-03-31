@@ -6,7 +6,7 @@
         "appID": "MJ367HY999.app.preschool.Preschool",
         "components": [
           {
-            "path": "/app/*",
+            "path": "/*",
             "comment": "All app-related links"
           }
         ]
