@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "MJ367HY999.app.preschool.Preschool",
+        "components": [
+          {
+            "path": "/app/*",
+            "comment": "All app-related links"
+          }
+        ]
+      }
+    ]
+  }
+}
