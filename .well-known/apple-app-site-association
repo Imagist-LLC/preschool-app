@@ -1,19 +1,18 @@
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "MJ367HY999.app.preschool.Preschool",
+        "appIDs": [ "MJ367HY999.app.preschool.Preschool" ],
         "components": [
           {
-            "path": "/*",
+            "/": "/*",
             "comment": "All app-related links"
           }
         ]
       }
     ]
   },
-"appclips": {
-        "apps": ["MJ367HY999.app.preschool.Preschool.Clip"]
-    }
+  "appclips": {
+    "apps": ["MJ367HY999.app.preschool.Preschool.Clip"]
+  }
 }
