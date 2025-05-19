@@ -12,5 +12,8 @@
         ]
       }
     ]
-  }
+  },
+"appclips": {
+        "apps": ["MJ367HY999.app.preschool.Preschool.Clip"]
+    }
 }
